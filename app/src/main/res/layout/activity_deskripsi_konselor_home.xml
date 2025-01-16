@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.DeskripsiKonselorHome">
+
+    <ImageView
+        android:id="@+id/backtoViewHome"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039"
+        app:srcCompat="@drawable/settings_backtoprofile" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Konselor Profesional"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/ijofigmapudar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="48dp"
+                android:layout_height="77dp"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/deskripsi_k_ic_halfcircle_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <View
+                android:id="@+id/view84"
+                android:layout_width="200dp"
+                android:layout_height="57dp"
+
+                android:background="@drawable/deskripsi_k_ic_ovalcenter_"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <View
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_svg_logo_yarsi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/imageViewProfileDes"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            android:background="@drawable/border_radius_2_2"
+
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintVertical_bias="0.29000002" />
+
+        <TextView
+            android:id="@+id/namaKonselorDeskDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Dr Anonym"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProfileDes" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/tag_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namaKonselorDeskDetail"
+            app:layout_constraintVertical_bias="0.0">
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/s"
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Tentang Konselor" />
+
+            <TextView
+                android:layout_marginTop="20px"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="Deskripsi Singkat Tentang :" />
+
+
+            <TextView
+                android:id="@+id/descSingkat"
+                android:layout_marginLeft="20px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:text="lorem Ipsum" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/tutupDeskKonselor"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/decor_btn_selector1_hover"
+        android:backgroundTint="@color/textbirufigma2"
+        android:text="Tutup"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

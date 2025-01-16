@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:clipToOutline="true"
+
+    android:layout_margin="10px"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--    android:background="@drawable/border_radius_2_2"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewProfileDes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/border_circle_white"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_ppdefault" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:text="Sukinem"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal">
+
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/a_review_star_unselect" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/a_review_star_unselect" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/a_review_star_unselect" />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/a_review_star_unselect" />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/a_review_star_unselect" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/tag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        app:flexDirection="row"
+        app:flexWrap="wrap">
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        >
+        <TextView
+            android:id="@+id/textfeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/decor_strip" />
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Pilih"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Sudah yakin konselor yang di pilih?"
+            android:textSize="27px"
+            app:layout_constraintBottom_toTopOf="@+id/btn_tidak"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/btn_pilih"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/border_btn_ijofigma"
+            android:backgroundTint="@color/ijo1"
+            android:clipToOutline="true"
+            android:text="Pilih"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_tidak"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/border_btn_ijofigma"
+            android:backgroundTint="@color/textijofigma"
+            android:clipToOutline="true"
+            android:textColor="@color/white"
+            android:text="Batal"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_pilih"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

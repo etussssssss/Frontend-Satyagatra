@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mymainactivity.LengkapiResgistrasi">
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:background="@drawable/decor_figm_circlelog1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:background="@drawable/decor_figm_circlelog2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="70px"
+        android:background="@drawable/decor_figm_starlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="-43"
+        android:rotationY="-2"
+        android:translationX="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="30"
+        android:rotationX="2"
+        android:rotationY="189"
+        android:translationX="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_logosatyagatrayarsi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="476dp"
+        android:text="Lengkapi data kamu"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ScrollView
+        android:id="@+id/hostfragmentlengkapiregis"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nama Lengkap"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/nama_lengkap_user"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:background="@drawable/border_radius_3"
+                android:backgroundTint="@color/bluegrey200"
+                android:ems="10"
+                android:hint="Nama Lengkap"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="13.7sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nama_lengkap_user"
+                app:layout_constraintVertical_bias="0.039" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="241dp"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintVertical_bias="0.0">
+
+                <RadioButton
+                    android:id="@+id/pria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="Laki-Laki" />
+
+                <RadioButton
+                    android:id="@+id/wanita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perempuan" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Domisili"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.221"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/domisili"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:background="@drawable/border_radius_3"
+                android:backgroundTint="@color/bluegrey200"
+                android:ems="10"
+                android:hint="Domisili (Cukup Provinsi)"
+                android:inputType="text"
+                android:textColor="@color/black"
+
+                android:textSize="13.7sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nomor Telepon"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.254"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/domisili"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:background="@drawable/border_radius_3"
+                android:backgroundTint="@color/bluegrey200"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                app:layout_constraintVertical_bias="0.0">
+
+                <!-- Icon Bendera Indonesia -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Bendera Indonesia"
+                    android:src="@drawable/ic_indonesia" />
+
+                <!-- Prefix Text untuk Kode Negara -->
+                <TextView
+                    android:id="@+id/tv_country_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="1dp"
+                    android:text="+62"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/bluegrey200" />
+
+                <!-- EditText untuk Input Nomor Telepon -->
+                <EditText
+                    android:id="@+id/nomortelepon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:hint="87xxxxxxxxx"
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    android:textColor="@color/black"
+                    android:textSize="13.7sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="160dp"
+                android:text="Status Pernikahan"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+
+                android:background="@drawable/border_radius_dropdownspinner"
+                android:popupBackground="@drawable/border_radius_dropdownspinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/s"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/lanjutregister"
+                android:layout_width="281dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="108dp"
+                android:background="@drawable/decor_btn_selector"
+                android:backgroundTint="@color/textbirufigma2"
+                android:text="Lanjut"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

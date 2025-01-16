@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:clipToOutline="true"
+    android:gravity="center"
+    android:background="@drawable/border_radius_2_2"
+    android:padding="20px"
+    android:layout_margin="10px"
+    android:orientation="vertical"
+    android:layout_width="230dp"
+    android:layout_height="250dp">
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Masih ragu konseling di Satyagatra? Yuk lihat semua review penggunanya" />
+
+    <Button
+        android:id="@+id/btnallreview"
+        android:layout_width="168dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/border_btn_ijofigma"
+        android:backgroundTint="@color/textbirufigma2"
+        android:clipToOutline="true"
+        android:textColor="@color/white"
+        android:text="Lihat Semua review"
+        android:textSize="10dp" />
+</LinearLayout>

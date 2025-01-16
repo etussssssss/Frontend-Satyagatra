@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/date"
+    android:layout_gravity="center"
+    android:clipToOutline="true"
+    android:background="@drawable/border_radius_2_2"
+    android:backgroundTint="@color/ijo3"
+    android:padding="20px"
+    android:gravity="center"
+    android:layout_margin="10px"
+    android:orientation="vertical"
+    android:layout_width="80dp"
+    android:layout_height="80dp">
+
+
+    <TextView
+        android:id="@+id/hariT"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Selasa" />
+
+    <TextView
+        android:id="@+id/angkatT"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="21 Okt" />
+
+
+</LinearLayout>

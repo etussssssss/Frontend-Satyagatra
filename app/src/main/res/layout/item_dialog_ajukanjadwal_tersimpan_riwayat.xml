@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Selamat! konselingmu berhasil di ajukan"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="27px" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_oke"
+                android:layout_width="100dp"
+                android:layout_height="29dp"
+                android:background="@drawable/border_btn_ijofigma"
+                android:backgroundTint="@color/ijo3"
+                android:clipToOutline="true"
+                android:text="oke"
+                android:textColor="@color/white"
+
+                android:textSize="10dp" />
+
+
+            <Button
+                android:id="@+id/btn_to_riwayat"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="29dp"
+                android:background="@drawable/border_btn_ijofigma"
+                android:backgroundTint="@color/textbirufigma2"
+                android:clipToOutline="true"
+                android:text="Lihat Riwayat"
+                android:textColor="@color/white"
+
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

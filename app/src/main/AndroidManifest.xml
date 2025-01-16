@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tambahkan izin di sini -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Satyagatra"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Projekconsultant"
+        tools:targetApi="31">
+        <activity
+            android:name=".sideactivity.DetailProfile"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ProfileStatistikKonsultasi"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ProfileRiwayatKonsultasiAct"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ProfileEditAkunPovAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ProfilePengaturanPovAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ReviewAllAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".admin.PilihKonselor"
+            android:exported="false" />
+        <activity
+            android:name=".methodsNService.NoInternet"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ForumChatAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.ChatAdmin"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".sideactivity.BeriReview"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.SemuaReviewSaya"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity2.AllReview"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity2.EditAkunProfile"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.DeskripsiKonselorHome"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.UbahPassword"
+            android:exported="false"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="projekconsultant-b3391.web.app"
+                    android:pathPrefix="/reset-password"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sideactivity.LupaPassword"
+            android:exported="false"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="projekconsultant-b3391.web.app"
+                    android:pathPrefix="/reset-password"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sideactivity.KebijakanPrivasi"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiResgistrasiTopikKonseling"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiRegistrasiInstansi"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiRegistrasiNextInternal"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiRegistrasiInternal"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiRegistrasiEksternal"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity.LengkapiRegistrasi"
+            android:exported="false" />
+        <activity
+            android:name=".admin.MainAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sideactivity2.Pengaturan"
+            android:exported="false" />
+        <activity
+            android:name=".GetStarted"
+            android:exported="false" />
+        <activity
+            android:name=".Registrasi"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".FirstProgress"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

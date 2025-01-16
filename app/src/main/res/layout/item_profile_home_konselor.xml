@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menyesuaikanpanjangflexbox"
+    android:layout_width="191dp"
+    android:layout_height="370dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    android:background="@drawable/a_border_radius_1">
+
+<!--    android:layout_height="340dp"-->
+
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+
+        android:background="@drawable/border_radius_2"
+        android:backgroundTint="@color/backgroundAbuabu" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/poppinsregular"
+        android:textColor="@color/black"
+        android:text="Nama Konselor" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/tag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

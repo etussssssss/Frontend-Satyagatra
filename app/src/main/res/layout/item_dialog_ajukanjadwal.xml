@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+
+        <TextView
+            android:id="@+id/tanggalKonseling"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxEms="3"
+            android:text="Jadwal konseling pada: 28 Oktober 2024"
+            android:textColor="@color/black"
+            android:textSize="27px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/LayananKonseling"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Layanan konseling: Wa (Video Call)"
+            android:textColor="@color/black"
+            android:textSize="27px"
+            android:ems="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+        <TextView
+            android:id="@+id/textView181"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Deskripsi Masalah :"
+            android:textColor="@color/black"
+            android:textSize="27px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/descMasalah"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kenapa ya, kadang rasanya capek banget sama semua? Tugas kuliah numpuk, teman-teman suka berubah-ubah, dan orang tua juga nggak selalu ngerti apa yang aku rasain. Pengen cerita, tapi takut dibilang lebay. Kadang cuma butuh ada yang dengerin tanpa nge-judge..."
+            android:textColor="@color/black"
+            android:textSize="27px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+        <Button
+            android:id="@+id/btn_simpanjadwal"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/border_btn_ijofigma"
+            android:backgroundTint="@color/textbirufigma2"
+            android:clipToOutline="true"
+            android:text="Simpan"
+            android:textColor="@color/white"
+
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

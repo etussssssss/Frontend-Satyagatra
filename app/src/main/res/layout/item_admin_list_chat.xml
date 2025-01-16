@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_gravity="center"
+    android:clipToOutline="true"
+    android:layout_margin="10px"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/border_radius_kotaknopad"
+    android:paddingStart="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="63dp">
+
+    <!--    android:background="@drawable/border_radius_2_2"-->
+    <ImageView
+        android:id="@+id/imageViewProfileDes"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/border_circle_white"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_ppdefault" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="Sukinem"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingEnd="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:lines="2"
+                android:text="Halo admin, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                android:textColor="@color/black"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/decor_strip" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/countmsg"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_radius_1"
+        android:backgroundTint="@color/ijo1"
+        android:textColor="@color/white" />
+
+</LinearLayout>

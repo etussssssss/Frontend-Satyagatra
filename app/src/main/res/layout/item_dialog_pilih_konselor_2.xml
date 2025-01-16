@@ -1,0 +1,74 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Pastikan Penamaan Nya Konsisten\nAgar Pendataan nya Rapih"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <EditText
+            android:id="@+id/editTextKonselor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/border_radius_rounded_corners"
+            android:hint="Masukkan nama konselor"
+            android:inputType="text"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_pilih"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_pilih"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/border_btn_ijofigma"
+            android:backgroundTint="@color/ijo1"
+            android:clipToOutline="true"
+            android:text="Pilih"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

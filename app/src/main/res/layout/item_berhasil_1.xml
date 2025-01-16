@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_success_ceklis_hijau" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berhasil"
+            android:textColor="@color/ijo1"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_margin="10px"
+                android:id="@+id/btn_pilihjadwal"
+                android:layout_width="100dp"
+                android:layout_height="29dp"
+                android:background="@drawable/border_btn_ijofigma"
+                android:backgroundTint="@color/textbirufigma2"
+                android:clipToOutline="true"
+                android:textColor="@color/white"
+                android:text="Pilih Jadwal"
+                android:textSize="10dp" />
+
+            <Button
+                android:layout_margin="10px"
+                android:id="@+id/btn_home"
+                android:layout_width="100dp"
+                android:layout_height="29dp"
+                android:background="@drawable/border_btn_ijofigma"
+                android:backgroundTint="@color/ijo1"
+                android:clipToOutline="true"
+                android:textColor="@color/white"
+                android:text="Home"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

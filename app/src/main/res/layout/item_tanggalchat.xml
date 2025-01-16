@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:padding="12dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textdate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius_2"
+        android:backgroundTint="@color/abuabuicon"
+        android:padding="10dp"
+        android:text="Pesan pengguna"
+        android:textColor="@color/white" />
+</LinearLayout>

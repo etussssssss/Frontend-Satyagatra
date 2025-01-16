@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menyesuaikanpanjangflexbox"
+    android:layout_width="match_parent"
+    android:layout_height="370dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    android:background="@drawable/a_border_radius_1">
+
+    <!--    android:layout_height="340dp"-->
+
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:clipToOutline="true"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+
+        android:background="@drawable/border_radius_1"
+        android:backgroundTint="@color/backgroundAbuabu" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/poppinsregular"
+        android:textColor="@color/black"
+        android:text="Nama Konselor" />
+
+    <TextView
+        android:id="@+id/desk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="Peer konselor memberikan bantuan psikososial secara cepat, efektif, dan berbasis empati di lingkungan sehari-hari."
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textparakonselor" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/tag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

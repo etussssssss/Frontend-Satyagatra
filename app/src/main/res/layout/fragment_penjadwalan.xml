@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myfragment.Penjadwalan">
+
+    <ProgressBar
+        android:id="@+id/loading_progbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/ijocanva2"
+        android:max="100"
+        android:progress="50"
+        android:progressTint="@color/ijocanva"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+    </ProgressBar>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:background="@color/ijofigmapudar">
+
+            <ImageView
+                android:id="@+id/backtohome"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/settings_backtoprofile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Pilih Layanan Konseling"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.42"
+                app:layout_constraintStart_toEndOf="@+id/backtohome"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <View
+                android:layout_width="55dp"
+                android:layout_height="26dp"
+                android:background="@drawable/decor_figm_starlog"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.997"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10px">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/jadwal_ic_1"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="10px"
+                    android:text="Psikolog Tercepat"
+                    android:textColor="@color/textbirufigma"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/jadwal_ic_2"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Privasi Aman"
+                    android:textColor="@color/textbirufigma"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/jadwal_ic_3"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="3px"
+                    android:text="Konselor Berlisensi"
+                    android:textColor="@color/textbirufigma"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/jadwal_img_svg_4" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/midMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px">
+
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="Pilih Layanan Konseling Dulu Ya!"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.029"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector4_hover"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+
+                android:padding="5dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView33"
+                app:layout_constraintVertical_bias="0.0">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_only_img_online"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Online"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/offline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/decor_btn_selector4_hover"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+
+                android:padding="5dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintStart_toEndOf="@+id/online"
+                app:layout_constraintTop_toBottomOf="@+id/textView33"
+                app:layout_constraintVertical_bias="0.0">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_only_img_offline"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Offline"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--        <View-->
+    <!--            android:id="@+id/online"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginStart="16dp"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:background="@drawable/decor_btn_selector4_hover_online"-->
+    <!--            android:clipToOutline="true"-->
+    <!--            android:scaleType="centerCrop"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView33"-->
+    <!--            app:layout_constraintVertical_bias="0.0" />-->
+
+
+
+
+    <!--                <View-->
+    <!--                    android:id="@+id/offline"-->
+    <!--                    android:layout_width="150dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_marginTop="16dp"-->
+    <!--                    android:layout_marginEnd="16dp"-->
+    <!--                    android:background="@drawable/decor_btn_selector4_hover_offline"-->
+    <!--                    android:clipToOutline="true"-->
+    <!--                    android:scaleType="centerCrop"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/textView33"-->
+    <!--                    app:layout_constraintVertical_bias="0.0" />-->

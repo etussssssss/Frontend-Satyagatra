@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">projekconsultant</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="buat_akun">
+        Belum punya akun? <font color="#88CBDB"><u>Buat akun</u></font>
+    </string>
+
+    <string name="login_akun">
+        Sudah punya akun? <font color="#88CBDB"><u>Login</u></font>
+    </string>
+
+    <string name="kebijakanprivasi">
+        Dengan menggunakan layanan Satyagatra kamu menyetujui <font color="#88CBDB"><u>kebijakan privasi</u></font> dari layanan kami
+    </string>
+
+    <string name="lupapw">
+        <font color="#88CBDB"><u>Lupa Password?</u></font>
+    </string>
+
+    <string name="deskripsi">
+        Aplikasi Satyagatra adalah aplikasi penjadwalan konsultasi online berbasis di Universitas YARSI yang memungkinkan pengguna untuk mengatur jadwal online atau janji tatap muka dengan konselor. Kebijakan privasi ini menjelaskan bagaimana data pribadi Anda dikumpulkan, digunakan, dilindungi, dan hak-hak Anda terkait data tersebut.
+    </string>
+
+    <string name="deskripsi2">
+        \u2022 Kami mengumpulkan informasi pribadi yang mencakup, nama, alamat email, nomor telepon,umur, dan pekerjaan. Informasi pribadi yang dikumpulkan digunakan untuk menyediakan layanan penjadwalan konsultasi, mengelola janji tatap muka dan online dengan konselor, serta untuk menghubungi Anda terkait pengingat jadwal atau notifikasi penting lainnya. Kami juga menggunakan data untuk meningkatkan kinerja dan pengalaman pengguna aplikasi.
+    </string>
+
+    <string name="deskripsi_bullet">
+    <ul>
+        <li>Kami mengumpulkan informasi pribadi yang mencakup nama, alamat email, nomor telepon, umur, dan pekerjaan.</li>
+        <li>Kami tidak membagikan data pribadi Anda kepada pihak ketiga kecuali dengan persetujuan Anda atau jika diwajibkan oleh hukum.</li>
+        <li>Kami menerapkan langkah-langkah keamanan teknis dan organisasi untuk melindungi data pribadi Anda.</li>
+        <li>Anda memiliki hak untuk mengakses, memperbarui, atau menghapus informasi pribadi Anda.</li>
+        <li>Kebijakan privasi ini dapat diperbarui dari waktu ke waktu.</li>
+        <li>Jika Anda memiliki pertanyaan, saran, atau keluhan, Anda dapat menghubungi kami.</li>
+    </ul>
+</string>
+
+
+    <!--    <string name="kebijakanprivasi">-->
+    <!--        Dengan menggunakan layanan Satyagatra kamu menyetujui <span style="color:#88CBDB; text-decoration:none;">kebijakan privasi</span> dari layanan kami-->
+    <!--    </string>-->
+
+
+    <!--    <string name="kebijakanprivasi">-->
+    <!--        Dengan menggunakan layanan YarsiConsult kamu menyetujui <a href="https://www.instagram.com/deprimeee_?igsh=cW1tdGNvanl3a2U%3D&amp;utm_source=qr">kebijakan privasi</a> dari layanan kami-->
+    <!--    </string>-->
+
+    <string name="deskripDrMaya">
+        dr. Maya Trisiswati, MKM memiliki latar belakang dan pengalaman yang kuat dalam bidang kesehatan masyarakat serta berperan penting dalam membantu memberikan layanan konseling seputar kesehatan, kesehatan reproduksi, HIVAIDS dan kekerasan seksual. Sikap profesionalismenya dalam menangani individu membuat dr. Maya Trisiswati, MKM menjadi seorang konselor yang berkomitmen kuat dalam membantu mengatasi berbagai permasalahan masyrakat terutama dalam kesehatan reproduksi dan kesehatan mental. Beliau pernah dianugerahkan Wira Karya Kencana dari BKKBN dan penghargaan dari ILO (International Labour Organization) sebagai apresiasi untuk komitmennya membantu masyarakat.
+    </string>
+
+    <string name="deskripDrLiko">
+        dr. Liko Maryudhiyanto, Sp.KJ., C.Ht merupakan salah satu konselor aktif Satyagatra yang memiliki latar belakang dan pengalaman yang kuat dalam bidang kedokteran, terkhususnya dalam lingkup kedokteran jiwa. Mengombinasikan sesi konseling dengan menggunakan metode hipnoterapi, membuat dr. Liko Maryudhiyanto, Sp.KJ., C.Ht mampu mendukung individu dalam mengatasi permasalahan emosional dan berperan penting dalam meningkatkan kesejahteraan mental masyarakat.
+    </string>
+
+    <string name="deskripDrMelok">
+        Dr. Melok Roro Kinanthi, M.Psi., Psikolog memiliki latar belakang keahlian sebagai psikolog dengan peminatan psikologi klinis dan psikologi keluarga. Beliau juga merupakan certified professional coach. Selain menjadi konselor di Satyagatra Universitas YARSI, ia juga bertugas sebagai dosen Fakultas Psikologi Universitas YARSI. Dengan pengalaman dan keahlian yang dimilikinya, beliau membantu masyarakat mencapai kesejahteraan mental yang lebih baik melalui layanan konseling yang diberikannya di Satyagatra Universitas YARSI.
+    </string>
+
+    <string name="deskripDrOctaviani">
+        Dr. Octaviani Indrasari Ranakusuma, M.Si., Psikolog merupakan seorang konselor Satyagatra Universitas YARSI yang memiliki bidang keahlian yang berfokus pada psikologi kesehatan dan psikologi perkembangan. Beliau seorang pengajar di Fakultas Psikologi Universitas YARSI, Dr. Octaviani Indrasari Ranakusuma, M.Si., Psikolog memberikan layanan konseling yang membantu individu mencapai pemahaman yang lebih baik di setiap tahapan perkembangan hidupnya.
+    </string>
+
+    <string name="deskripDrMiwa">
+        Dr. Miwa Patnani, M.Si., Psikolog memiliki latar belakang keahlian sebagai psikolog dan gelar Master of Science (M.Si.), beliau berfokus pada bidang keahlian psikologi pendidikan, psikologi keluarga dan psikologi perkawinan. Selain mengajar, Dr. Miwa juga aktif sebagai konselor di Satyagatra Universitas YARSI, di mana beliau memberikan layanan konseling untuk membantu individu mengatasi berbagai permasalahan sosial dan emosional. Keahlian dan dedikasinya di bidang psikologi membuatnya berperan penting dalam mendukung kesehatan mental masyarakat.
+    </string>
+
+    <string name="deskripDrFitriArlinkasari">
+        Dr. Fitri Arlinkasari, Psikolog, meraih gelar doktor (Ph.D.) di bidang psikologi dan memiliki keahlian dalam penelitian serta pengajaran. Beliau memiliki keahlian di bidang psikologi lingkungan dan perkotaan, hubungan antara manusia dan tempat, placemaking, penelitian partisipatif dan etis bersama anak-anak, metode kualitatif dan metode yang dipimpin oleh anak, serta pengembangan dan pengambilan keputusan karir. Saat ini, beliau berperan sebagai konselor di Satyagatra Universitas YARSI, di mana beliau memberikan dukungan psikologis dan membantu individu menghadapi berbagai tantangan mental dan emosional, dengan fokus pada pengembangan karir dan hubungan mereka dengan lingkungan sekitar.
+    </string>
+
+    <string name="deskripDrayaYahya">
+        Aya Yahya Maulana, Lc, M.H. memiliki latar belakang sebagai dosen Agama Islam di program studi Perpustakan &amp; Sains Informatika Universitas YARSI. Aya Yahya Maulana, Lc, M.H. memiliki fokus pengajaran yang meliputi Studi Islam, Hukum Islam, dan Aspek Hukum Informasi. Aya Yahya Maulana, Lc, M.H.  berperan sebagai konselor Agama Islam yang dapat memberikan pelayanan konsultasi dalam lingkup keislaman di Satyagatra Universitas YARSI.
+    </string>
+
+    <string name="deskripDrSitiMaulidya">
+        dr. Siti Maulidya Sari, M.Epid, Dipl.DK memiliki latar belakang sebagai asisten ahli di Fakultas Kedokteran Universitas YARSI serta Konselor Profesional di Satyagatra Universitas YARSI. Beliau memiliki fokus dibidang ilmu epidemiologi klinik - kesehatan masyarakat
+    </string>
+
+    <string name="deskripDrDilfa">
+        Dilfa Juniar, PhD (c), Psikolog. Beliau menempuh doktoral di bidang psikologi klinis dan memiliki keahlian dalam penelitian dan pengajaran. Lingkup keahlian beliau meliputi topik-topik stress and quality of life, cultural adaptation, meta-analysis, digital mental health, dan global mental health. Beliau berperan sebagai konselor yang menyediakan dukungan psikologis dan membantu individu dalam menghadapi berbagai tantangan mental dan emosional menggunkana pendekatan cognitive-behavioral di Satyagatra YARSI.
+    </string>
+
+    <string name="deskripDrAan">
+        dr. Aan Royhan, MSc, C,Ht memiliki latar belakang akademik dan pengalaman yang kuat dalam bidang ilmu kedokteran, dengan fokus pada pendidikan dan pengembangan ilmu kesehatan, beliau memiliki bidang keahlian di area histologi. Dengan gelar Master of Science (MSc), dr. Aan terlibat aktif dalam kegiatan pengajaran, penelitian, serta pengabdian masyarakat di lingkup Fakultas Kedokteran. Beliau juga memiliki gelar non akademik Clinical Hypnotherapist (C.Ht) dan menjalankan peran sebagai konselor di Satyagatra Universitas YARSI dalam membantu mahasiswa mengembangkan karakter positif dan keterampilan yang diperlukan untuk sukses baik dalam pendidikan maupun kehidupan sehari-hari. dr. Aan dikenal atas dedikasinya dalam mendukung kemajuan pendidikan kesehatan dan kesejahteraan mental mahasiswa.
+    </string>
+
+    <string name="deskripDrYusuf">
+        DR Yusuf Shofie, S.H., M.H., Dosen Fakultas Hukum Universitas YARSI [1992 - sekarang (2024)] dan Advokat (Pengacara) anggota PERADI (Perhimpunan Advokat Indonesia) dengan izin praktik NIA 93.10419 sejak 1993. Bidang ajar Hukum Perburuhan, Hukum Perlindungan Konsumen, Hukum Acara Pidana, Kejahatan Ekonomi (Tindak Pidana Ekonomi), Pengantar Ilmu Hukum dan Instruktur Praktik Hukum Pendidikan dan Latihan Kemahiran Hukum. Kegiatan-kegiatan advokasi dan pendampingan korban pada Lembaga Bantuan Hukum (LBH) Jakarta (1990-1991) dan Yayasan Lembaga Konsumen Indonesia (1991-2007). Di samping sebagai penulis sejumlah buku dan Kepala Laboratorium Hukum Fakultas Hukum Universitas YARSI [2017 - sekarang (2024)], saat ini juga berperan sebagai Konselor Professional, memberikan layanan konsultasi hukum pada Satyagatra Universitas YARSI.
+    </string>
+
+    <string name="deskripDrChandradewi">
+        Chandradewi Kusristanti, M.Psi., Psikolog merupakan psikolog klinis yang cukup sering menangani kasus-kasus relasi interpersonal, khususnya kekerasan dalam relasi intim. Beliau aktif menjadi pengajar di Fakultas Psikologi Universitas YARSI dan turut serta menjadi konselor profesional di Satyagatra Universitas YARSI untuk memberikan layanan konsultasi mengenai kesehatan mental.
+    </string>
+
+    <string name="deskripDrSariZakiah">
+        Sari Zakiah Akmal, M.Psi., PhD., Psikolog, adalah seorang psikolog yang memiliki gelar doktor (Ph.D.) di bidang psikologi dan berpengalaman dalam penelitian serta pengajaran. Keahlian beliau mencakup pengembangan diri dan karier bagi dewasa muda, optimalisasi pendidikan di tingkat perguruan tinggi, serta psikologi pendidikan. Beliau berperan sebagai konselor yang memberikan dukungan psikologis, membantu individu dalam mengatasi berbagai tantangan mental dan emosional di Satyagatra Universitas YARSI. Fokus konseling beliau adalah pada pengembangan diri dan karier, di mana beliau mendukung individu untuk mencapai potensi maksimal mereka di bidang pendidikan dan karier, serta membantu mereka dalam navigasi dan pengambilan keputusan penting dalam hidup.
+    </string>
+
+    <string name="deskripDrAlabanyo">
+        Alabanyo Brebahama, M.Psi., Psikolog, yang biasa dipanggil dengan Pak Banyo merupakan seorang psikolog pendidikan yang juga aktif sebagai dosen tetap Fakultas Psikologi Universitas YARSI. Dalam kesehariannya sebagai dosen, beliau aktif mengajar Psikologi Pendidikan, Pelatihan, dan Pendidikan Anak Berkebutuhan Khusus. Sementara itu, kegiatan praktek profesional beliau sebagai konselor fokus pada penanganan masalah-masalah psikologis yang terjadi dalam setting pendidikan (e.g., kematangan sekolah, perencanaan karir, stress akademik, pengembangan soft skill peserta didik, isu kepercayaan diri). Beliau pun memiliki sertifikat kompetensi sebagai Master Trainer dan aktif melakukan kegiatan pelatihan baik untuk siswa, mahasiswa, maupun tenaga pengajar. Pak Banyo juga memiliki kepedulian dalam penanganan individu berkebutuhan khusus. Beberapa kasus yang seringkali beliau tangani adalah penanganan psikologis penyandang
+    </string>
+
+    <string name="deskripDrCitra">
+        dr. Citra Fitri Agustina, Sp.KJ, beliau akrab dikenal dengan panggilan dr. Cifi merupakan seorang dosen di Fakultas Kedokteran Universitas YARSI sekaligus seorang ahli Spesialis Psikiater (Sp.KJ) yang memiliki spesialisasi dalam kesehatan jiwa. Selain sebagai dosen, dr. Cifi juga berperan sebagai konselor di Satyagatra Universitas YARSI, di mana beliau memberikan layanan konseling dan dukungan kesehatan mental untuk membantu individu mengatasi masalah emosional dan psikologis.
+    </string>
+
+    <string name="deskripDrLusy">
+        DR Lusy Liany,SH.,M.H adalah seorang ahli hukum yang memiliki gelar doktor dengan fokus utama dalam bidang hukum konstitusional. Beliau juga aktif dalam mengajar di Fakultas Hukum Universitas YARSI berbagi pengetahuan dan pengalamannya di bidang hukum pada mahasiswa. DR Lusy memiliki keahlian dalam bidang yang mencakup constitutional law, procedural law, constitutional court, human rights law, dan legislatives sciences. Beliau berperan sebagai konselor hukum di Satyagatra Universitas YARSI yang memberikan dukungan hukum yang informatif dan solutif terutama bagi mereka yang memerlukan bantuan terkait isu-isu konstitusional dan hak asasi manusia.
+    </string>
+
+    <string name="deskripDrEly">
+        Ely Nurhayati, S.Pd, M.Si merupakan konselor Satyagatra Universitas YARSI yang memiliki latar belakang dan pengalaman yang kuat dalam bidang ilmu ekonomi. Di samping mengajar sebagai dosen di Fakultas Ekonomi dan Bisnis Universitas YARSI. Beliau dapat menjadi konsultan yang berkaitan dengan ekonomi makro dan mikro, serta dapat membantu membangun pemahaman yang lebih baik tentang pengelolaan keuangan pribadi dan pengambilan keputusan finansial yang bijaksana
+    </string>
+
+    <string name="deskripDrAyyun">
+        Qurrata A’yyun,M.Psi.,Psikolog memiliki latar belakang keahlian sebagai psikolog klinis dewasa dan gelar magister profesi (M.Psi). Beliau adalah salah satu alumni di Fakultas Psikologi Universitas YARSI yang menjadi konselor di Satyagatra Universitas YARSI, di mana beliau memberikan layanan konseling untuk membantu individu mengatasi berbagai permasalahan yang mendukung kesehatan mental dan emosional individu.
+    </string>
+
+    <string name="deskripDrYusnita">
+        dr. Yusnita., MKes.,Sp.KKLP.,Subsp.COPC  memiliki latar belakang sebagai dokter spesialis kedokteran keluarga layanan primer dan menjadi dosen dalam bidang Ilmu Kesehatan Masyarakat di Fakultas Kedokteran Universitas YARSI. Beliau berperan sebagai konselor professional yang dapat memberikan layanan konsultasi mengenai gizi, kesehatan ibu dan anak serta konselor menyusui di Satyagatra Universitas YARSI
+    </string>
+
+    <string name="deskripPeerKonselor">
+        Peer konselor memberikan bantuan psikososial secara cepat, efektif, dan berbasis empati di lingkungan sehari-hari.
+    </string>
+
+    <string-array name="nama_bulan">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+</resources>

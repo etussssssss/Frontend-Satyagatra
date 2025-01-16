@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.ReviewAllAdmin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="@color/ijofigmapudar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/backRev"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Semua Review Pov Admin"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toEndOf="@+id/backRev"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/decor_figm_starlog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--<ScrollView-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="0dp"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"-->
+<!--app:layout_constraintVertical_bias="0.0">-->
+
+<!--<LinearLayout-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:layout_marginStart="4dp"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/textbirufigma2"-->
+<!--            android:text="4 Teratas akan tampil menjadi highlight di home."-->
+<!--            android:textSize="13sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="3dp"-->
+<!--            android:background="@drawable/decor_strip" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewReview1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="7dp"-->
+<!--            android:background="@drawable/decor_strip" />-->
+
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewReview2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
+<!--</ScrollView>-->

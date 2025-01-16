@@ -1,0 +1,16 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/ijocanva2" /> <!-- Warna latar belakang -->
+
+    <corners android:radius="16dp" /> <!-- Mengatur radius sudut -->
+
+    <!-- Opsional: Mengatur border -->
+    <stroke
+        android:color="@color/ijocanva2" /> <!-- Warna dan ketebalan border -->
+
+    <!-- Opsional: Padding di dalam elemen -->
+<!--    <padding-->
+<!--        android:left="8dp"-->
+<!--        android:top="8dp"-->
+<!--        android:right="8dp"-->
+<!--        android:bottom="8dp" />-->
+</shape>

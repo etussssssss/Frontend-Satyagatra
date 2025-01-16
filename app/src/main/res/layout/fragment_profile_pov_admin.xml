@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgfragment"
+    tools:context=".admin.ProfilePovAdminFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--   Header    -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:gravity="center"
+            android:clipToOutline="true"
+            android:background="@drawable/border_bgtop"
+            android:backgroundTint="@color/ijofigmapudar"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                app:layout_constraintBottom_toBottomOf="@+id/tabungstarted"
+                app:layout_constraintTop_toBottomOf="@+id/tabungstarted">
+
+                <View
+                    android:layout_width="55dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/decor_figm_starlog"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.997"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:layout_width="119dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/decor_halfcircle_2"
+                    android:backgroundTint="@color/ijofigmapudar2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/ic_svg_logo_yarsi"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <ImageView
+                    android:id="@+id/myfoto"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_circle_white"
+                    android:clipToOutline="true"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.804"
+                    tools:src="@drawable/img_ppdefault" />
+
+                <TextView
+                    android:id="@+id/myname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Anonymous"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/myfoto"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.49" />
+
+                <TextView
+                    android:id="@+id/mydomisili"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="DKI Jaka"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/myfoto"
+                    app:layout_constraintTop_toBottomOf="@+id/myname" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/tag_layout"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/myfoto"
+                    app:layout_constraintTop_toBottomOf="@+id/mydomisili"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:paddingTop="7.3dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Aktivitas-->
+                <LinearLayout
+                    android:id="@+id/aktivitas1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="3mm"
+                    android:paddingRight="3mm"
+                    android:orientation="vertical">
+                    <!--Text Aktivitas-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aktivitas"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/textbirufigma" />
+
+                    <!--   Icon    -->
+                    <LinearLayout
+                        android:id="@+id/pengaturan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:src="@drawable/p_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pengaturan"
+                            android:textSize="17dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3mm"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/decor_strip" />
+
+                </LinearLayout>
+
+                <!--Sosial Media-->
+                <LinearLayout
+                    android:id="@+id/sosialmedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="3mm"
+                    android:paddingRight="3mm"
+                    android:orientation="vertical">
+                    <!--Text Sosial Media-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rekapitulasi"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/textbirufigma" />
+
+                    <!--   Icon    -->
+                    <LinearLayout
+                        android:id="@+id/riwayatKonsultasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:src="@drawable/ic_riwayat_konsultasi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Riwayat Konsultasi"
+                            android:textSize="17dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3mm"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/decor_strip" />
+
+                    <LinearLayout
+                        android:id="@+id/statistikKonsultasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:src="@drawable/ic_statistik_konsultasi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Statistik Konsultasi"
+                            android:textSize="17dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3mm"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/decor_strip" />
+                </LinearLayout>
+
+                <!--Bantuan-->
+                <LinearLayout
+                    android:id="@+id/bantuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="3mm"
+                    android:paddingRight="3mm"
+                    android:orientation="vertical">
+                    <!--Text Bantuan-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bantuan"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/textbirufigma" />
+
+                    <LinearLayout
+                        android:id="@+id/kebijakanprivasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:src="@drawable/p_kebijakanprivasidoc" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kebijakan Privasi"
+                            android:textSize="17dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3mm"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/decor_strip" />
+
+                    <LinearLayout
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_radius_kotaknopad"
+                        android:clipToOutline="true"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.025">
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:background="@color/white"
+                            android:backgroundTint="@color/bgfragment"
+                            app:srcCompat="@drawable/icon_logout_red" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3mm"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:text="Keluar"
+                            android:textColor="@color/red500" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/decor_strip" />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+        <!-- S -->
+
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".sideactivity.ChatAdmin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/backtohome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Admin Satyagatra Universitas YARSI"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/icon_circle_profil"
+            android:backgroundTint="@color/backgroundAbuabu"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backtohome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_univyarsilogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/decor_strip" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:orientation="vertical"
+        android:background="@color/bluegrey50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yukkenalan" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10px"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/inputMessage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_radius_2_2"
+            android:paddingStart="20dp"
+            android:hint="Tulis pesan..." />
+
+        <ImageButton
+            android:id="@+id/sendCht"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_circle_profil"
+            android:backgroundTint="@color/backgroundAbuabu"
+            app:srcCompat="@drawable/send_27dp_000000_fill0_wght400_grad0_opsz24" />
+    </LinearLayout>
+</LinearLayout>

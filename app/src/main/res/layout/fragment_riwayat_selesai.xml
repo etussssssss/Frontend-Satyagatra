@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myfragment.RiwayatSelesai">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSelesai1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageViewProfileDes"-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:background="@drawable/border_circle_white"-->
+<!--            android:clipToOutline="true"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/img_ppdefault"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/topik"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="Curhat Remaja"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/nama" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/deskripsTopik"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:maxLines="2"-->
+<!--            android:text="Saya Kenapa ya, kadang rasanya capek banget sama semua? Tugas kuliah numpuk, teman-teman suka berubah-ubah, dan orang tua juga "-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageViewProfileDes" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/toggleTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:text="Lihat lebih banyak"-->
+<!--            android:textColor="@color/textbirufigma2"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/myReview"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/deskripsTopik"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/offoron"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:background="@drawable/decor_btn_selector1_hover"-->
+<!--            android:backgroundTint="@color/ijofigmapudar"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="5px"-->
+<!--            android:text="Online"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/deskripsTopik"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/topik"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/nama"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Sukinem Waringih ElJocoWeDoodo"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/myReview"-->
+<!--            android:layout_width="110dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:background="@drawable/riwayat_ic_reviewsaya"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/deskripsTopik"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</LinearLayout>

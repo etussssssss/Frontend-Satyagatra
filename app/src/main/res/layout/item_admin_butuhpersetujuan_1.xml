@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageViewProfileDes"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_circle_white"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_ppdefault"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/topik"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Curhat Remaja"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/nama" />
+
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="27 Desember 2024"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/topik" />
+
+        <TextView
+            android:id="@+id/ws"
+            android:layout_width="90dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/decor_btn_selector1_hover"
+            android:backgroundTint="@color/yellow"
+            android:gravity="center"
+            android:padding="7px"
+            android:text="Butuh Perstujuan"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/offoron"
+            app:layout_constraintTop_toBottomOf="@+id/tanggal" />
+
+        <TextView
+            android:id="@+id/deskripsTopik"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:text="Saya Kenapa ya, kadang rasanya capek banget sama semua? Tugas kuliah numpuk, teman-teman suka berubah-ubah, dan orang tua juga "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/offoron" />
+
+        <TextView
+            android:id="@+id/toggleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Lihat lebih banyak"
+            android:textColor="@color/textbirufigma2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deskripsTopik"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/offoron"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/ijocanva2"
+            android:gravity="center"
+            android:padding="5px"
+            android:text="Online"
+            android:textColor="@color/ijocanva2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/tanggal" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Sukinem Waringih ElJocoWeDoodo"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/pilih"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius_2"
+            android:backgroundTint="@color/textbirufigma2"
+            android:clipToOutline="true"
+            android:text="Pilih Konselor"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProfileDes" />
+
+        <Button
+            android:id="@+id/reschedule"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border_radius_2"
+            android:backgroundTint="@color/textijofigma"
+            android:clipToOutline="true"
+            android:text="Reschedule"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pilih"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/decor_strip" />
+
+
+</LinearLayout>
+
+
+<!--<Button-->
+<!--android:id="@+id/ubahjadwal"-->
+<!--android:layout_width="100dp"-->
+<!--android:layout_height="30dp"-->
+<!--android:layout_marginTop="13dp"-->
+<!--android:layout_marginEnd="8dp"-->
+<!--android:background="@drawable/border_radius_3"-->
+<!--android:backgroundTint="@color/textbirufigma2"-->
+<!--android:clipToOutline="true"-->
+<!--android:text="Reschedule"-->
+<!--android:textColor="@color/textbirufigma2"-->
+<!--android:textSize="10sp"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/toggleTextView"-->
+<!--app:layout_constraintVertical_bias="0.0" />-->

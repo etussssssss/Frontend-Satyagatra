@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_failed_x_logo_red" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mohon Maaf"
+            android:textColor="@color/red500"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Gagal login, silahkan coba lagi"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/kembali"
+                android:layout_width="100dp"
+                android:layout_height="29dp"
+                android:background="@drawable/border_radius_kotaknopad"
+                android:backgroundTint="@color/red500"
+                android:clipToOutline="true"
+                android:textColor="@color/red500"
+                android:text="Kembali"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myfragment.jadwalOnline">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/ijofigmapudar"
+        android:layout_width="match_parent"
+        android:layout_height="79dp">
+
+
+        <ImageView
+            android:id="@+id/backtohome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Konseling Online"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toEndOf="@+id/backtohome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/decor_figm_starlog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="10px"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/jadwal_ic_1"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/textbirufigma"
+                android:text="Psikolog Tercepat"
+                android:paddingLeft="10px"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/jadwal_ic_2"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/textbirufigma"
+                android:text="Privasi Aman"
+                android:textSize="10sp" />
+
+
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/jadwal_ic_3"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/textbirufigma"
+                android:text="Konselor Berlisensi"
+                android:paddingLeft="3px"
+                android:textSize="10sp" />
+
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/decor_strip" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="458dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Pilih Berdasarkan Jadwal"
+                android:textSize="14dp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewJadwal1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Pilih Layanan Konsultasi"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:layout_margin="20dp"
+
+                android:background="@drawable/border_radius_dropdownbg"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="@drawable/border_radius_dropdownspinner"
+                android:scrollbars="vertical"
+                android:spinnerMode="dropdown" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Pilih Topik Konseling"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:layout_margin="20dp"
+
+                android:background="@drawable/border_radius_dropdownbg"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="@drawable/border_radius_dropdownspinner"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Yuk isi curhatan singkat masalahmu!"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/etDescription"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:paddingBottom="40dp"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                -->
+<!--                -->
+<!--                android:background="@drawable/border_radius_dropdownbg"-->
+<!--                android:hint="Masukkan deskripsi (max 3 baris)"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="3"-->
+<!--                android:maxLength="150"-->
+<!--                android:scrollbars="none"-->
+<!--                -->
+<!--                -->
+<!--                />-->
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="300dp"
+
+                android:background="@drawable/border_radius_dropdownbg"
+
+                android:gravity="center_vertical"
+
+
+                android:hint="Isi singkat curhatanmu..."
+                android:inputType="textMultiLine"
+                android:maxLength="500"
+                android:maxEms="3"
+                android:padding="20dp"
+
+                android:scrollHorizontally="false" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/Enter"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/decor_btn_selector1_hover"
+        android:backgroundTint="@color/textbirufigma2"
+        android:text="Ajukan Jadwal"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+
+</LinearLayout>

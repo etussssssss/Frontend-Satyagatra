@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white"/>
+    <corners
+        android:topLeftRadius="25dp"
+        android:topRightRadius="25dp"
+        android:bottomRightRadius="25dp"
+        android:bottomLeftRadius="25dp"
+        />
+
+    <!-- Sesuaikan dengan radius yang diinginkan -->
+    <stroke
+        android:width="5dp"
+        android:color="@color/ijofigmapudar"
+        />
+
+
+    <gradient
+        android:angle="25"
+        android:centerColor="@color/ijofigmapudar"
+        android:centerX="200"
+        android:centerY="300"
+        android:endColor="@color/ijofigmapudar"
+        android:gradientRadius="50dp"
+        android:startColor="@color/white" />
+</shape>

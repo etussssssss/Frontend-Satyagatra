@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.DetailProfile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/ijofigmapudar"
+        android:layout_width="match_parent"
+        android:layout_height="79dp">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Detail"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/decor_figm_starlog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/scedit"-->
+<!--        android:layout_width="match_parent"-->
+
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:scrollbars="vertical">-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/ijofigmapudar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="48dp"
+                android:layout_height="77dp"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/deskripsi_k_ic_halfcircle_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <View
+                android:id="@+id/view84"
+                android:layout_width="200dp"
+                android:layout_height="57dp"
+
+                android:background="@drawable/deskripsi_k_ic_ovalcenter_"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_svg_logo_yarsi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/myfoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border_circle_white"
+            android:clipToOutline="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/img_ppdefault" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Email : user@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Nama : user ahmad"
+            android:textColor="@color/black"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Tanggal Lahir : 04-01-2004"
+            android:textColor="@color/black"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Domisili : Jakarta"
+            android:textColor="@color/black"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Gender : Laki-Laki"
+            android:textColor="@color/black"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Nomor Telepon : 084984241498"
+            android:background="@drawable/border_radius_3"
+            android:backgroundTint="@color/bluegrey200"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <View
+            android:id="@+id/view412"
+            android:layout_width="48dp"
+            android:layout_height="77dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/deskripsi_k_ic_halfcircle_left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    </ScrollView>-->
+</LinearLayout>

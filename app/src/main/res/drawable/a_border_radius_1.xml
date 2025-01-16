@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/rounded_progress_bar.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="191dp"
+    android:height="266dp"
+    android:viewportWidth="191"
+    android:viewportHeight="266">
+    <group>
+        <path
+            android:fillColor="#FFFAFFFA"
+            android:pathData="M0 20c0-11.05 8.95-20 20-20h151c11.05 0 20 8.95 20 20v226c0 11.05-8.95 20-20 20h-151c-11.05 0-20-8.95-20-20z"/>
+    </group>
+    <path
+        android:strokeColor="#33000000"
+        android:strokeWidth="1"
+        android:pathData="M0.5 20c0-10.77 8.73-19.5 19.5-19.5h151c10.77 0 19.5 8.73 19.5 19.5v226c0 10.77-8.73 19.5-19.5 19.5h-151c-10.77 0-19.5-8.73-19.5-19.5z"/>
+</vector>
+
+
+

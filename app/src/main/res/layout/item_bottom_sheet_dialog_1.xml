@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/border_radius_5_bottom_sheet"
+    >
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_svg_logos_satyagatra_yarsi" />
+
+    <TextView
+        android:paddingTop="20dp"
+
+        android:id="@+id/nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Nama : Sukinem Waringgih"
+        android:textSize="16sp" />
+
+    <TextView
+        android:paddingTop="20dp"
+
+        android:id="@+id/jadwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Jadwal Konseling pada: 28 Oktober 2024"
+        android:textSize="16sp" />
+
+    <TextView
+        android:paddingTop="20dp"
+
+        android:id="@+id/layanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Layanan Konseling: Janji Tatap Muka/Offline"
+        android:textSize="16sp" />
+
+    <TextView
+        android:paddingTop="20dp"
+
+        android:id="@+id/topik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Topik Konseling: Curhat Remaja"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp">
+
+        <TextView
+            android:id="@+id/deskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Deskripsi Masalah:\nKenapa ya, kadang rasanya capek banget sama semua? Tugas kuliah numpuk, teman-teman suka berubah-ubah, dan orang tua juga nggak selalu ngerti apa yang aku rasain. Pengen cerita, tapi takut dibilang lebay. Kadang cuma butuh ada yang dengerin tanpa nge-judge..."
+            android:textSize="16sp" />
+    </ScrollView>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/decor_strip" />
+
+    <Button
+        android:id="@+id/pilihkan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilihkan Konselor"
+        android:textColor="@color/white"
+        android:background="@drawable/border_radius_1"
+        android:backgroundTint="@color/textbirufigma2"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_radius_rounded_corners"
+    android:clipToOutline="true"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Pilih Alasan Perubahan"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/textbirufigma2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content">
+
+
+        <View
+            android:id="@+id/buttonBatal"
+            android:gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_warning_hitam"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chat"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/topik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mohon pilih alasan perubahan jadwal dan menunggu admin 1x24 jam sejak perubahan jadwal diajukan."
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+        <!-- RadioGroup dengan RadioButton hanya bisa memilih satu -->
+        <RadioGroup
+            android:id="@+id/radioGroupAlasan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/radio_alasan_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perubahan rencana atau agenda"
+                android:textSize="10sp"
+                android:textColor="@color/black"/>
+
+            <RadioButton
+                android:id="@+id/radio_alasan_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kesalahan saat memilih jadwal"
+                android:textSize="10sp"
+
+                android:textColor="@color/black"/>
+
+            <RadioButton
+                android:id="@+id/radio_alasan_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kondisi darurat atau keperluan"
+                android:textSize="10sp"
+                android:textColor="@color/black"/>
+
+            <RadioButton
+                android:id="@+id/radio_alasan_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingin menyesuaikan jadwal dengan kegiatan lain"
+                android:textSize="10sp"
+                android:textColor="@color/black"/>
+
+            <RadioButton
+                android:id="@+id/radio_alasan_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Butuh waktu tambahan untuk persiapan"
+                android:textSize="10sp"
+                android:textColor="@color/black"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_konfirmasi"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/border_btn_ijofigma"
+            android:backgroundTint="@color/textbirufigma2"
+            android:clipToOutline="true"
+            android:textColor="@color/white"
+            android:text="Konfirmasi"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

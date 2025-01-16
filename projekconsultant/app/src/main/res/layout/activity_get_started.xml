@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetStarted">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_logoyarsi_notext"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20px"
+            android:layout_marginLeft="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Satyagatra"
+                        android:textColor="@color/textblackfigma"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="YARSI"
+                        android:textColor="@color/textijofigma2"
+                        android:textSize="24dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
+
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        >
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/dot_active"
+            android:clipToOutline="true"
+            android:layout_margin="10dp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/dot_unactive"
+            android:layout_margin="10dp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/dot_unactive"
+            android:layout_margin="10dp" />
+    </LinearLayout>>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textijofigma3"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20px"
+            android:text="Lewati"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:scaleType="center"
+            android:clipToOutline="true"
+            android:background="@drawable/border_circle_white"
+            android:backgroundTint="@color/bluegrey50"
+            app:srcCompat="@drawable/icon_getstarted_next" />
+    </LinearLayout>
+</LinearLayout>

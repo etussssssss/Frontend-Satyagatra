@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.LengkapiRegistrasiInstansi">
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:background="@drawable/decor_figm_circlelog1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:background="@drawable/decor_figm_circlelog2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="70px"
+        android:background="@drawable/decor_figm_starlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="-43"
+        android:rotationY="-2"
+        android:translationX="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="30"
+        android:rotationX="2"
+        android:rotationY="189"
+        android:translationX="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_svg_logos_satyagatra_yarsi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="476dp"
+        android:text="Yuk, Lengkapi Profil Mu"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_radius_dropdownspinner"
+        android:backgroundTint="@color/bluegrey200"
+        android:text="Kembali"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--  BATAS THEME   -->
+
+    <Button
+        android:id="@+id/eksternal"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_radius_dropdownspinner"
+        android:backgroundTint="@color/white"
+        android:text="Eksternal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/internal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <Button
+        android:id="@+id/internal"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_radius_dropdownspinner"
+        android:backgroundTint="@color/white"
+        android:text="Internal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eksternal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <TextView
+        android:id="@+id/t112"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="Pilih Eksternal jika berasal dari luar instansi YARSI, dan pilih Internal jika berasal dari dalam instansi YARSI."
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eksternal"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

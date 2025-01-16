@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.SemuaReviewSaya">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/ijofigmapudar"
+        android:layout_width="match_parent"
+        android:layout_height="79dp">
+
+        <ImageView
+            android:id="@+id/backtohome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Detail Review"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toEndOf="@+id/backtohome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/decor_figm_starlog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:text="Penilaian Saya"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:backgroundTint="@color/backgroundAbuabu"
+        android:background="@drawable/decor_strip" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewProfileDes"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border_circle_white"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_ppdefault"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:text="Sukinem"
+                android:textColor="@color/black" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10px"
+                android:gravity="center_horizontal">
+
+
+                <ImageView
+                    android:id="@+id/star1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            android:text="28 Oktober 2024 | (Online) "
+            android:textColor="@color/black"
+            android:textSize="13.5sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+        <TextView
+            android:id="@+id/sum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            android:text="Kak Nikie"
+            android:textColor="@color/black"
+            android:textSize="13.5sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/sum" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/tag_layout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sum2">
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <TextView
+            android:id="@+id/desk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tag_layout" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/decor_strip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desk"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerViewReview1"-->
+<!--        android:layout_marginTop="10px"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+</LinearLayout>
+
+
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:layout_gravity="center"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--<ImageView-->
+<!--    android:id="@+id/imageViewProfileDes"-->
+<!--    android:layout_width="60dp"-->
+<!--    android:layout_height="60dp"-->
+<!--    android:layout_marginStart="5dp"-->
+<!--    android:layout_marginTop="5dp"-->
+<!--    android:background="@drawable/border_circle_white"-->
+<!--    android:clipToOutline="true"-->
+<!--    android:scaleType="centerCrop"-->
+<!--    android:src="@drawable/img_ppdefault"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/linearLayout4"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    android:layout_marginTop="5dp"-->
+<!--    android:orientation="vertical"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="0.0"-->
+<!--    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/nama"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="10px"-->
+<!--        android:text="Sukinem"-->
+<!--        android:textColor="@color/black" />-->
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout2"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginLeft="10px"-->
+<!--        android:gravity="center_horizontal">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/star1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/a_review_star_unselect" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/star2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/a_review_star_unselect" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/star3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/a_review_star_unselect" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/star4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/a_review_star_unselect" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/star5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/a_review_star_unselect" />-->
+<!--    </LinearLayout>-->
+<!--</LinearLayout>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/sum"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="center_horizontal"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    android:layout_marginTop="1dp"-->
+<!--    android:layout_marginEnd="8dp"-->
+<!--    android:text="28 Oktober 2024  15:00 | Layanan Konseling: Zoom meeeting (Online) "-->
+<!--    android:textColor="@color/black"-->
+<!--    android:textSize="10sp"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="0.0"-->
+<!--    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />-->
+
+<!--<TextView-->
+<!--    android:id="@+id/sum2"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="center_horizontal"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    android:layout_marginTop="1dp"-->
+<!--    android:layout_marginEnd="8dp"-->
+<!--    android:text="Kak Nikie"-->
+<!--    android:textColor="@color/black"-->
+<!--    android:textSize="10sp"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="0.0"-->
+<!--    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/sum" />-->
+
+<!--<com.google.android.flexbox.FlexboxLayout-->
+<!--    android:id="@+id/tag_layout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="30dp"-->
+<!--    android:layout_gravity="center"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    app:flexDirection="row"-->
+<!--    app:flexWrap="wrap"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="0.0"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/sum2">-->
+
+<!--</com.google.android.flexbox.FlexboxLayout>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/desk"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."-->
+<!--    android:textColor="@color/black"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="0.0"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/tag_layout" />-->
+
+<!--<View-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="2dp"-->
+<!--    android:layout_marginTop="8dp"-->
+<!--    android:background="@drawable/decor_strip"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/desk"-->
+<!--    app:layout_constraintVertical_bias="1.0" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

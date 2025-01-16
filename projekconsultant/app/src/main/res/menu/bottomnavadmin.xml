@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Beranda"
+        android:id="@+id/home"
+        android:icon="@drawable/icon_home_btmnav"
+        />
+
+    <item android:title="Jadwal"
+        android:id="@+id/checked"
+        android:icon="@drawable/icon_jadwal_btmnav"
+        />
+    <item android:title="Profil"
+        android:id="@+id/profil"
+        android:icon="@drawable/icon_profil_btmnav"
+        />
+</menu>

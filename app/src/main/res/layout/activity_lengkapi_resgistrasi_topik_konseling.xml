@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.LengkapiResgistrasiTopikKonseling">
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:background="@drawable/decor_figm_circlelog1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:background="@drawable/decor_figm_circlelog2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="70px"
+        android:background="@drawable/decor_figm_starlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="-43"
+        android:rotationY="-2"
+        android:translationX="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="30"
+        android:rotationX="2"
+        android:rotationY="189"
+        android:translationX="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_svg_logos_satyagatra_yarsi"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="294dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="Apa topik konselingmu?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="(Pilih maksimal 3)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/warningtextnextInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="*Tolong isi terlebih dahulu"
+        android:textColor="@color/red500"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/depresi"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+
+        android:gravity="center"
+        android:text="Depresi"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/kecemasan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/kecemasan"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Kecemasan"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/percintaan"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Percintaan"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kecemasan"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/keluarga"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Keluarga"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/trauma"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depresi" />
+
+
+    <TextView
+        android:id="@+id/trauma"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Trauma"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kecemasan" />
+
+    <TextView
+        android:id="@+id/pekerjaan"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Pekerjaan"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/trauma"
+        app:layout_constraintTop_toBottomOf="@+id/percintaan" />
+
+    <TextView
+        android:id="@+id/kepribadian"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="kepribadian"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/kendaliemosi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keluarga" />
+
+    <TextView
+        android:id="@+id/kendaliemosi"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Kendali Emosi"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trauma" />
+
+    <TextView
+        android:id="@+id/kecanduan"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Kecanduan"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kendaliemosi"
+        app:layout_constraintTop_toBottomOf="@+id/pekerjaan" />
+
+    <TextView
+        android:id="@+id/stres"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:text="Stress"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/pengembangandiri"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kepribadian" />
+
+    <TextView
+        android:id="@+id/pengembangandiri"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/decor_btn_selector2_hover"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Pengembangan Diri"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kendaliemosi" />
+
+
+    <TextView
+        android:id="@+id/warningtexttopik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/decor_btn_selector3_hover"
+        android:text="*Pilih Topik dahulu atau klik eksplorasi sendiri"
+        android:textColor="@color/red500"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pengembangandiri" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/border_radius_2"
+        android:backgroundTint="@color/blue400"
+        android:text="Simpan"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/eksplorsendiri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/eksplorsendiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/decor_btn_selector3_hover"
+        android:text="Saya ingin eksplorasi sendiri"
+        android:textColor="@color/blue400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

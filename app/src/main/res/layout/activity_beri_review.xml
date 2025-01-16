@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sideactivity.BeriReview">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/ijofigmapudar"
+        android:layout_width="match_parent"
+        android:layout_height="79dp">
+
+        <ImageView
+            android:id="@+id/backtohome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/settings_backtoprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Masukan Review"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toEndOf="@+id/backtohome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/decor_figm_starlog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10px"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Masukan anda sangat penting untuk improvisasi kami."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/decor_strip" />
+
+    <ScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="458dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/t111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Pengalaman"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/t112"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Bagaimana Pengalamanmu berkonseling dengan Satyagatra*"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t111" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t112">
+
+                <ImageView
+                    android:id="@+id/star1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/a_review_star_unselect" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/t113"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Kepuasan"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <TextView
+                android:id="@+id/t114"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Apa saja ciri utama yang paling menggambarkan Satyagatra?
+(Pilih Maksimal 3)*"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t113" />
+
+            <TextView
+                android:id="@+id/responsif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Responsif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t114" />
+
+            <TextView
+                android:id="@+id/bersih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Bersih"
+                app:layout_constraintStart_toEndOf="@+id/responsif"
+                app:layout_constraintTop_toBottomOf="@+id/t114" />
+
+            <TextView
+                android:id="@+id/goodlistener"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Good-Listener"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/bersih"
+                app:layout_constraintTop_toBottomOf="@+id/t114" />
+
+            <TextView
+                android:id="@+id/privasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Privasi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/responsif" />
+
+            <TextView
+                android:id="@+id/nonjudge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:text="Non-Judgemental"
+                app:layout_constraintStart_toEndOf="@+id/privasi"
+                app:layout_constraintTop_toBottomOf="@+id/bersih" />
+
+            <TextView
+                android:id="@+id/nyaman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Nyaman"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/nonjudge"
+                app:layout_constraintTop_toBottomOf="@+id/goodlistener" />
+
+            <TextView
+                android:id="@+id/mudah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Mudah"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/privasi" />
+
+            <TextView
+                android:id="@+id/waktucukup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Waktu Cukup"
+                app:layout_constraintStart_toEndOf="@+id/mudah"
+                app:layout_constraintTop_toBottomOf="@+id/nonjudge" />
+
+            <TextView
+                android:id="@+id/membantu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Membantu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/waktucukup"
+                app:layout_constraintTop_toBottomOf="@+id/nyaman" />
+
+            <TextView
+                android:id="@+id/fasilitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Fasilitas Memadai"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mudah" />
+
+            <TextView
+                android:id="@+id/konselingpuas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/decor_btn_selector2_hover"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Konseling Puas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fasilitas"
+                app:layout_constraintTop_toBottomOf="@+id/waktucukup" />
+
+            <TextView
+                android:id="@+id/t115"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Keseluruhan"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fasilitas" />
+
+            <TextView
+                android:id="@+id/t116"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Bagaimana pengalaman anda secara keseluruhan berkonsultasi dengan Satyagatra*"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t115" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="240dp"
+                android:background="@drawable/border_radius_dropdownbg"
+                android:gravity="center_vertical"
+                android:hint="Isi singkat pengalamanmu..."
+                android:inputType="textMultiLine"
+                android:maxEms="3"
+                android:maxLength="450"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:scrollHorizontally="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t116"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/Enter"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/decor_btn_selector1_hover"
+        android:backgroundTint="@color/textbirufigma2"
+        android:text="Kirim Review"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+
+</LinearLayout>

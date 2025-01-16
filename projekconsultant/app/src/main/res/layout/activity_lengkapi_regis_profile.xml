@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LengkapiRegisProfile">
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:background="@drawable/decor_figm_circlelog1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:background="@drawable/decor_figm_circlelog2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150px"
+        android:layout_height="70px"
+        android:background="@drawable/decor_figm_starlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="-43"
+        android:rotationY="-2"
+        android:translationX="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@drawable/decor_figm_haltubebot"
+        android:rotation="30"
+        android:rotationX="2"
+        android:rotationY="189"
+        android:translationX="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_logosatyagatrayarsi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="476dp"
+        android:text="Yuk, Lengkapi Profil Mu"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Lengkap"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <EditText
+        android:id="@+id/namalengkap"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/border_radius_3"
+        android:backgroundTint="@color/bluegrey200"
+        android:ems="10"
+        android:hint="Masukan nama lengkapmu"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13.7sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat Tempat Tinggal"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <EditText
+        android:id="@+id/tempattinggal"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/border_radius_3"
+        android:backgroundTint="@color/bluegrey200"
+        android:ems="10"
+        android:hint="Masukan nama lengkapmu"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13.7sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
+
+
+    <Button
+        android:id="@+id/entersimpankelengkapan"
+        android:layout_width="281dp"
+        android:layout_height="32dp"
+        android:alpha="0.3"
+        android:background="@drawable/border_radius_2"
+        android:backgroundTint="@color/ijocanva2"
+        android:text="Simpan"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.787" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/butuhpersetujuanremindchat"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginBottom="4dp">
+
+<!--  Taro Tools Context Di Atas Jika error  -->
+<!--    tools:context=".myfragment.RiwayatButuhPersetujuan"-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageViewProfileDes"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_circle_white"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_ppdefault"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="5dp"
+            android:text="Tanggal Pesanan:28 Oktober 2024"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/layanan"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:text="Layanan Konseling: (Video Call)"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/tanggal" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/decor_btn_selector1_hover"
+            android:backgroundTint="@color/yellow"
+            android:gravity="center"
+            android:padding="7px"
+            android:text="Butuh Perstujuan"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+            app:layout_constraintTop_toBottomOf="@+id/layanan"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="5dp"
+        android:maxLines="2"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="23:24"
+        android:textColor="@color/black" />
+</LinearLayout>
