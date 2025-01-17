@@ -22,4 +22,8 @@ data class UserDataAjuinJadwalInternal (
     var onoff:String = "",
     var konselor:String? = "",
     var typeIOrE:String = "",
+
+    var domisili:String = "",
+    var status:String = "",
+
 )

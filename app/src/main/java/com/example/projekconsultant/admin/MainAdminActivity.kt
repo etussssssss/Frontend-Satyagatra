@@ -121,6 +121,8 @@ class MainAdminActivity : BaseActivity() {
 
                                         profesi = "${data.get("profesi")}",
                                         fakultas = "${data.get("fakultas")}",
+                                        status = "${data.get("status")}",
+                                        domisili = "${data.get("domisili")}",
 
                                         PilihTanggal = "${data.get("pilihTanggal")}",
                                         PilihLayananKonsultasi = "${data.get("pilihLayananKonsultasi")}",
@@ -179,6 +181,8 @@ class MainAdminActivity : BaseActivity() {
 
                                         profesi = "${data.get("profesi")}",
                                         fakultas = "${data.get("fakultas")}",
+                                        status = "${data.get("status")}",
+                                        domisili = "${data.get("domisili")}",
 
                                         PilihTanggal = "${data.get("pilihTanggal")}",
                                         PilihLayananKonsultasi = "${data.get("pilihLayananKonsultasi")}",
@@ -228,9 +232,9 @@ class MainAdminActivity : BaseActivity() {
                     }
                 }
             }
-            //
 
-            // Pengambilan Data Review Konseling si user secara public.
+
+            //Pengambilan Data Review Konseling si user secara public.
             db.collection("review").get().addOnSuccessListener { queryResult ->
                 queryResult.documents.forEach { document ->
                     val dbReview = document.data // Map<String, Any> dari dokumen
@@ -251,9 +255,9 @@ class MainAdminActivity : BaseActivity() {
             }.addOnFailureListener { exception ->
                 Log.e("Firestore", "Error mengambil data dari Firestore: ${exception.message}")
             }
-            //
 
-            //
+
+
            listener4 = db.collectionGroup("allRiwayat").addSnapshotListener { snapshots, error ->
                if (error != null) {
                    Log.e("RIWAYAT", "Error fetching snapshots: ${error.message}")
@@ -281,6 +285,14 @@ class MainAdminActivity : BaseActivity() {
                                "E" -> "Eksternal"
                                else -> ""
                            }
+                           val umur = data["umur"] as? Long
+                           val umurInt = umur?.toInt() ?: 0  // Mengonversi Long ke Int atau default ke 0 jika null
+                           val profesi = data["profesi"]?.toString().orEmpty()
+                           val fakultas = data["fakultas"]?.toString().orEmpty()
+                           val gender = data["gender"]?.toString().orEmpty()
+                           val status = data["status"]?.toString().orEmpty()
+                           val domisili = data["domisili"]?.toString().orEmpty()
+
 
                            // Menambahkan data ke dalam list jika lengkap
                            if (namaUser.isNotEmpty() && topikKonsultasi.isNotEmpty() && tanggalSelesaiUser.isNotEmpty()) {
@@ -294,11 +306,17 @@ class MainAdminActivity : BaseActivity() {
                                        layananOnlineOrOfflineUser = layananOnlineOrOfflineUser,
                                        layananKonsultasi = layananKonsultasi,
                                        curhatanUser = curhatanUser,
-                                       typeUser = typeUser
+                                       typeUser = typeUser,
+                                       umur = umurInt,
+                                       profesi = profesi,
+                                       fakultas = fakultas,
+                                       gender = gender,
+                                       status = status,
+                                       domisili = domisili
                                    )
                                )
                                sharedDatasAdmin.updateDataRiwayatSelesaiAdmin(datasRiwayatKonsulDanKonselor)
-                               Log.d("MAIN ADMIN", "${datasRiwayatKonsulDanKonselor}")
+                               //Log.d("MAIN ADMIN", "${datasRiwayatKonsulDanKonselor}")
                            }
                        }
                    }

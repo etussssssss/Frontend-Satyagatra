@@ -15,4 +15,9 @@ data class DataRiwayatSelesaiAdmin (
     val curhatanUser:String = "",
     val typeUser:String = "",
     val umur:Int = 0,
+    val gender:String = "",
+    val profesi:String = "",
+    val fakultas:String = "",
+    val status:String = "",
+    val domisili:String = "",
 ) : Parcelable

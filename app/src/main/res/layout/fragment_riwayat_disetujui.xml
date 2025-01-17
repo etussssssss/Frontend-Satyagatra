@@ -30,20 +30,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageViewProfileDes"
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageViewProfileDes"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/border_circle_white"-->
+<!--                    android:clipToOutline="true"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/img_ppdefault"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_foto"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/border_circle_white"
-                    android:clipToOutline="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_ppdefault"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/img_ppdefault">
+
+                    <ImageView
+                        android:id="@+id/imageViewProfileDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_ppdefault"
+                        tools:src="@drawable/img_ppdefault" />
+                </androidx.cardview.widget.CardView>
 
 
                 <TextView
@@ -53,7 +79,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="5dp"
                     android:text="Curhat Remaja"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_foto"
                     app:layout_constraintTop_toBottomOf="@+id/nama" />
 
                 <TextView
@@ -89,7 +115,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfileDes" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardview_foto" />
 
                 <TextView
                     android:id="@+id/toggleTextView"
@@ -122,7 +148,7 @@
                     android:text="Online"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toTopOf="@+id/deskripsTopik"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_foto"
                     app:layout_constraintTop_toBottomOf="@+id/tanggal"
                     app:layout_constraintVertical_bias="0.0" />
 
@@ -133,7 +159,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp"
                     android:text="27 Desember 2024"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_foto"
                     app:layout_constraintTop_toBottomOf="@+id/topik" />
 
 
@@ -148,7 +174,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewProfileDes"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_foto"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button

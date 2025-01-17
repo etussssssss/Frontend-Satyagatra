@@ -32,6 +32,7 @@ class Riwayat : Fragment() {
     private var thLayanan: String? = ""
     private var thTanggal: String? = ""
     private var thOffOrOnn: String? = ""
+    private var no: String? = ""
     private var thDescTopikk: String? = ""
     private lateinit var auth: FirebaseAuth
 
@@ -55,6 +56,12 @@ class Riwayat : Fragment() {
     private var thDataDetail:ArrayList<SelesaiDetailReviewUser> = arrayListOf()
     private lateinit var db: FirebaseFirestore
     private var thDataUserSelesai:ArrayList<UserSelesai> = arrayListOf()
+    private var statusButuhPersetujuan:Boolean = false
+    private var statusDisetujui:Boolean = false
+    private var statusSelesai:Boolean = false
+    private lateinit var progbar: ProgressBar
+    private lateinit var recy: RecyclerView
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_riwayat, container, false)
@@ -62,6 +69,8 @@ class Riwayat : Fragment() {
         auth = Firebase.auth
         val userId = auth.currentUser?.uid
         //
+        progbar = view.findViewById(R.id.loading_progbar)
+        recy = view.findViewById<RecyclerView>(R.id.recyclerView)
 
         view.findViewById<ImageView>(R.id.backtohome).setOnClickListener {
             val homeFragment = Home()
@@ -71,19 +80,64 @@ class Riwayat : Fragment() {
 
         db = FirebaseFirestore.getInstance()
         val sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
-        val statusButuhPersetujuan: Boolean = sharedViewModel.riwayatStatusButuhPersetujuan.value ?: false
-        val statusDisetujui: Boolean = sharedViewModel.riwayatStatusDisetujui.value ?: false
-        val statusSelesai: Boolean = sharedViewModel.riwayatStatusSelesai.value ?: false
-        thNamee = sharedViewModel.namaUser.value              ?: "Nama Default"
-        thTopikk = sharedViewModel.riwayatTopik.value         ?: "Topik Default"
-        thLayanan = sharedViewModel.riwayatLayanan.value      ?: "Layanan Default"
-        thTanggal  = sharedViewModel.riwayatTanggal.value     ?: "Tanggal Default"
-        thOffOrOnn = sharedViewModel.riwayatOffOrOn.value     ?: "Status Default"
-        thDescTopikk = sharedViewModel.riwayatDescTopik.value ?: "Deskripsi Default"
-        val no = sharedViewModel.riwayatNoPendaftaran.value
+
+        // Observe each LiveData to update UI in real time
+        sharedViewModel.riwayatStatusButuhPersetujuan.observe(viewLifecycleOwner) { status ->
+            statusButuhPersetujuan = status ?: false
+            // Update UI or perform logic based on `statusButuhPersetujuan`
+            //Update
+            updateMenuItems(userId.toString())
+        }
+
+        sharedViewModel.riwayatStatusDisetujui.observe(viewLifecycleOwner) { status ->
+            statusDisetujui = status ?: false
+            // Update UI or perform logic based on `statusDisetujui`
+            //Update
+            updateMenuItems(userId.toString())
+        }
+
+        sharedViewModel.riwayatStatusSelesai.observe(viewLifecycleOwner) { status ->
+            statusSelesai = status ?: false
+            // Update UI or perform logic based on `statusSelesai`
+            //Update
+            updateMenuItems(userId.toString())
+        }
+
+        sharedViewModel.namaUser.observe(viewLifecycleOwner) { name ->
+            thNamee = name ?: "Nama Default"
+            // Update UI if necessary, e.g., textView.text = thNamee
+        }
+
+        sharedViewModel.riwayatTopik.observe(viewLifecycleOwner) { topic ->
+            thTopikk = topic ?: "Topik Default"
+            // Update UI if necessary
+        }
+
+        sharedViewModel.riwayatLayanan.observe(viewLifecycleOwner) { service ->
+            thLayanan = service ?: "Layanan Default"
+            // Update UI if necessary
+        }
+
+        sharedViewModel.riwayatTanggal.observe(viewLifecycleOwner) { date ->
+            thTanggal = date ?: "Tanggal Default"
+            // Update UI if necessary
+        }
+
+        sharedViewModel.riwayatOffOrOn.observe(viewLifecycleOwner) { status ->
+            thOffOrOnn = status ?: "Status Default"
+            // Update UI if necessary
+        }
+
+        sharedViewModel.riwayatDescTopik.observe(viewLifecycleOwner) { description ->
+            thDescTopikk = description ?: "Deskripsi Default"
+            // Update UI if necessary
+        }
+        sharedViewModel.riwayatNoPendaftaran.observe(viewLifecycleOwner) { description ->
+            no = description ?: ""
+        }
 
         sharedViewModel.dataSelesai.value?.forEach { data ->
-            db.collection("review").document("${data.nomorPendaftaran}").addSnapshotListener { snapshot, exception ->
+                db.collection("review").document("${data.nomorPendaftaran}").addSnapshotListener { snapshot, exception ->
                 if (exception != null) {
                     Log.e("Firestore", "Error mendapatkan snapshot real-time", exception)
                     return@addSnapshotListener
@@ -133,6 +187,8 @@ class Riwayat : Fragment() {
                                 )
                             )
                         )
+                        //Update
+                        updateMenuItems(userId.toString())
                     }
                     // Update data pada ViewModel setelah perubahan
                     sharedViewModel.updateDataUserSelesai(thDataUserSelesai)
@@ -158,7 +214,24 @@ class Riwayat : Fragment() {
             }
         }
 
-        Handler().postDelayed({
+        //Update
+        updateMenuItems(userId.toString())
+
+        return view
+    }
+
+    private fun navigateToFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    // Fungsi untuk memperbarui menu secara real-time
+    private fun updateMenuItems(userId: String) {
+        progbar.visibility = View.VISIBLE
+        // Perbarui menu berdasarkan status terkini
+       Handler().postDelayed({
             // Data menu item
             val menuItems = listOf(
                 RiwayatItem("Butuh Persetujuan",
@@ -179,31 +252,28 @@ class Riwayat : Fragment() {
                     if (statusSelesai) RiwayatSelesai()
                     else RiwayatTidakAdaJadwalDisetujui())
             )
-            val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView).apply {
+
+            recy.apply {
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 adapter = RiwayatItemAdapter(menuItems) { menuItem ->
                     navigateToFragment(menuItem.fragment)
                 }
             }
+
             val adapter = RiwayatItemAdapter(menuItems) { menuItem ->
                 navigateToFragment(menuItem.fragment)
             }
-            recyclerView.adapter = adapter
-            view.findViewById<ProgressBar>(R.id.loading_progbar).visibility = View.GONE
-            recyclerView.post {
+
+           recy.adapter = adapter
+           progbar.visibility = View.GONE
+           recy.post {
                 navigateToFragment(menuItems.first().fragment)
-                (recyclerView.adapter as? RiwayatItemAdapter)?.setDefaultSelection()
+                (recy.adapter as? RiwayatItemAdapter)?.setDefaultSelection()
             }
         }, 2500)
-        return view
     }
 
-    private fun navigateToFragment(fragment: Fragment) {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
+
 
     private fun getMyReview(datasReview:ArrayList<SelesaiDetailReviewUser> , no: ArrayList<String>){
         Log.d("MASUK MAIN", "${no}")
@@ -235,8 +305,126 @@ class Riwayat : Fragment() {
 
 
 
+//        Handler().postDelayed({
+//            // Data menu item
+//            val menuItems = listOf(
+//                RiwayatItem("Butuh Persetujuan",
+//                    if (statusButuhPersetujuan) RiwayatButuhPersetujuan.newInstance(
+//                        thNamee!!, thTopikk!!, thOffOrOnn!!,
+//                        thDescTopikk!!, thTanggal!!, thLayanan!!,
+//                        no, userId
+//                    )
+//                    else RiwayatTidakAdaJadwalPersetujuan()),
+//                RiwayatItem("Di Setujui",
+//                    if (statusDisetujui) RiwayatDisetujui.newInstance(
+//                        thNamee!!, thTopikk!!, thOffOrOnn!!,
+//                        thDescTopikk!!, thTanggal!!, thLayanan!!,
+//                        no, userId
+//                    )
+//                    else RiwayatTidakAdaJadwalDisetujui()),
+//                RiwayatItem("Selesai",
+//                    if (statusSelesai) RiwayatSelesai()
+//                    else RiwayatTidakAdaJadwalDisetujui())
+//            )
+//
+//            val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView).apply {
+//                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//                adapter = RiwayatItemAdapter(menuItems) { menuItem ->
+//                    navigateToFragment(menuItem.fragment)
+//                }
+//            }
+//
+//            val adapter = RiwayatItemAdapter(menuItems) { menuItem ->
+//                navigateToFragment(menuItem.fragment)
+//            }
+//
+//            recyclerView.adapter = adapter
+//            view.findViewById<ProgressBar>(R.id.loading_progbar).visibility = View.GONE
+//            recyclerView.post {
+//                navigateToFragment(menuItems.first().fragment)
+//                (recyclerView.adapter as? RiwayatItemAdapter)?.setDefaultSelection()
+//            }
+//        }, 2500)
 
 
+
+
+
+//sharedViewModel.dataSelesai.value?.forEach { data ->
+//    db.collection("review").document("${data.nomorPendaftaran}").addSnapshotListener { snapshot, exception ->
+//        if (exception != null) {
+//            Log.e("Firestore", "Error mendapatkan snapshot real-time", exception)
+//            return@addSnapshotListener
+//        }
+//
+//        if (snapshot != null && snapshot.exists()) {
+//            val dbReview = snapshot.data // Map<String, Any> dari dokumen
+//            // Cek apakah data dengan nomorPendaftaran sudah ada dalam thDataUserSelesai
+//            val existingDataIndex = thDataUserSelesai.indexOfFirst { it.selesaidata.nomorPendaftaran == data.nomorPendaftaran }
+//            if (existingDataIndex != -1) {
+//                // Jika data sudah ada, update data tersebut
+//                thDataUserSelesai[existingDataIndex] = UserSelesai(
+//                    SelesaiData(
+//                        nomorPendaftaran = "${data.nomorPendaftaran}",
+//                        name = "${data.name}",
+//                        topik = "${data.topik}",
+//                        tanggal = "${data.tanggal}",
+//                        offOrOn = "${data.offOrOn}",
+//                        isiCurhatan = "${data.isiCurhatan}",
+//                        konselor = "${data.konselor}"
+//                    ),
+//                    SelesaiDetailReviewUser(
+//                        nomorPendaftaran = "${data.nomorPendaftaran}",
+//                        pengalaman = "${dbReview?.get("pengalaman")}",
+//                        tag = "${dbReview?.get("tag")}",
+//                        rateStar = (dbReview?.get("star") as? Long)?.toInt() ?: 0,
+//                    )
+//                )
+//            } else {
+//                // Jika data belum ada, tambahkan data baru
+//                thDataUserSelesai.add(
+//                    UserSelesai(
+//                        SelesaiData(
+//                            nomorPendaftaran = "${data.nomorPendaftaran}",
+//                            name = "${data.name}",
+//                            topik = "${data.topik}",
+//                            tanggal = "${data.tanggal}",
+//                            offOrOn = "${data.offOrOn}",
+//                            isiCurhatan = "${data.isiCurhatan}",
+//                            konselor = "${data.konselor}"
+//                        ),
+//                        SelesaiDetailReviewUser(
+//                            nomorPendaftaran = "${data.nomorPendaftaran}",
+//                            pengalaman = "${dbReview?.get("pengalaman")}",
+//                            tag = "${dbReview?.get("tag")}",
+//                            rateStar = (dbReview?.get("star") as? Long)?.toInt() ?: 0,
+//                        )
+//                    )
+//                )
+//            }
+//            // Update data pada ViewModel setelah perubahan
+//            sharedViewModel.updateDataUserSelesai(thDataUserSelesai)
+//        } else {
+//            thDataUserSelesai.removeAll { it.selesaidata.nomorPendaftaran == data.nomorPendaftaran }
+//            sharedViewModel.updateDataUserSelesai(thDataUserSelesai)
+//            // Jika dokumen tidak ada atau snapshot kosong, tambahkan data default
+//            thDataUserSelesai.add(
+//                UserSelesai(
+//                    SelesaiData(
+//                        nomorPendaftaran = "${data.nomorPendaftaran}",
+//                        name = "${data.name}",
+//                        topik = "${data.topik}",
+//                        tanggal = "${data.tanggal}",
+//                        offOrOn = "${data.offOrOn}",
+//                        isiCurhatan = "${data.isiCurhatan}",
+//                        konselor = "${data.konselor}"
+//                    )
+//                )
+//            )
+//            sharedViewModel.updateDataUserSelesai(thDataUserSelesai)
+//        }
+//    }
+//}
 
 
 

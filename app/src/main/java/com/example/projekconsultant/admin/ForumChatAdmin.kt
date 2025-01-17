@@ -77,7 +77,6 @@ class ForumChatAdmin : BaseActivity() {
             }
         }
 
-
         namaUser.text = intent.getStringExtra("NAMAUSER")
         findViewById<ImageView>(R.id.backtohome).setOnClickListener {
             finish()

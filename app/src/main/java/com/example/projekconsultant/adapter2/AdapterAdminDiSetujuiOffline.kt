@@ -139,17 +139,44 @@ class AdapterAdminDiSetujuiOffline(private var data: List<DataPendaftaran>) : Re
             deskripsi.text = "Deskripsi Masalah:\n${dataUser.IsiCurhatan}"
             buttonSelesai.text = "Selesai"
             buttonSelesai.setOnClickListener {
-                val data = mapOf(
-                    "type" to "${dataUser.type}",
-                    "nama" to "${dataUser.nama}",
-                    "konselor" to "${dataUser.konselor}",
-                    "pilihTanggal" to "${dataUser.PilihTanggal}",
-                    "pilihTopikKonsultasi" to "${dataUser.PilihTopikKonsultasi}",
-                    "isiCurhatan" to "${dataUser.IsiCurhatan}",
-                    "onoff" to "${dataUser.onoff}",
-                    "umur" to dataUser.umur.toInt()
-                )
-                selesaiKonselingCreateRiwayat(context, "${dataUser.uuid}", "${dataUser.nomorPendaftaran}", data)
+                if("${dataUser.type}" == "I"){
+                    val data = mapOf(
+                        "type" to "${dataUser.type}",
+                        "nama" to "${dataUser.nama}",
+                        "konselor" to "${dataUser.konselor}",
+                        "pilihTanggal" to "${dataUser.PilihTanggal}",
+                        "pilihTopikKonsultasi" to "${dataUser.PilihTopikKonsultasi}",
+                        "isiCurhatan" to "${dataUser.IsiCurhatan}",
+                        "onoff" to "${dataUser.onoff}",
+                        "umur" to dataUser.umur.toInt(),
+                        "gender" to "${dataUser.gender}",
+                        "status" to "${dataUser.status}",
+                        "domisili" to "${dataUser.domisili}",
+                        "profesi" to "${dataUser.profesi}",
+                        "fakultas" to "${dataUser.fakultas}"
+                    )
+                    selesaiKonselingCreateRiwayat(context, "${dataUser.uuid}", "${dataUser.nomorPendaftaran}", data)
+                    dismiss()
+                }
+
+                if("${dataUser.type}" == "E"){
+                    val data = mapOf(
+                        "type" to "${dataUser.type}",
+                        "nama" to "${dataUser.nama}",
+                        "konselor" to "${dataUser.konselor}",
+                        "pilihTanggal" to "${dataUser.PilihTanggal}",
+                        "pilihTopikKonsultasi" to "${dataUser.PilihTopikKonsultasi}",
+                        "isiCurhatan" to "${dataUser.IsiCurhatan}",
+                        "onoff" to "${dataUser.onoff}",
+                        "umur" to dataUser.umur.toInt(),
+                        "gender" to "${dataUser.gender}",
+                        "status" to "${dataUser.status}",
+                        "domisili" to "${dataUser.domisili}",
+                        "profesi" to "${dataUser.profesi}",
+                    )
+                    selesaiKonselingCreateRiwayat(context, "${dataUser.uuid}", "${dataUser.nomorPendaftaran}", data)
+                    dismiss()
+                }
                 dismiss()
             }
             setOnDismissListener {

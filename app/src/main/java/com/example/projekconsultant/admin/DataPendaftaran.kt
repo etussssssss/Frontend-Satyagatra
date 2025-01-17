@@ -13,6 +13,8 @@ data class DataPendaftaran (
     val umur:String = "",
     val gender:String = "",
     val type:String = "",
+    val status:String = "",
+    val domisili:String = "",
 
     val profesi:String = "",
     val fakultas:String = "",

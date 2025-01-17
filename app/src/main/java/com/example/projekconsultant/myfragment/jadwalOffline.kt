@@ -61,6 +61,8 @@ class jadwalOffline : Fragment() {
     private var myProfesi:String? = ""
     private var myFakultas:String? = ""
 
+    private var myStatus:String? = ""
+    private var myDomisili:String? = ""
 
     private var myNomortelepon:String? = ""
     private var myTypeIOrE:String? = ""
@@ -209,15 +211,45 @@ class jadwalOffline : Fragment() {
         val isiCurhatan = view.findViewById<EditText>(R.id.etDescription).text
 
         val sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
-        myName = sharedViewModel.namaUser.value
-        myUmur = calculateAgeAllVersions("${sharedViewModel.umur.value}")
-        myGender = sharedViewModel.gender.value
+        sharedViewModel.namaUser.observe(viewLifecycleOwner) { nama ->
+            myName = nama
+        }
 
-        myNomortelepon = sharedViewModel.nomorTelepon.value
-        myTypeIOrE = sharedViewModel.typeUserIORE.value
-        statusPendaftaran = sharedViewModel.statusPendaftaran.value
-        myProfesi = sharedViewModel.profesi.value
-        myFakultas =  sharedViewModel.fakultas.value
+        sharedViewModel.umur.observe(viewLifecycleOwner) { umur ->
+            myUmur = calculateAgeAllVersions(umur.toString())
+        }
+
+        sharedViewModel.gender.observe(viewLifecycleOwner) { gender ->
+            myGender = gender
+        }
+
+        sharedViewModel.nomorTelepon.observe(viewLifecycleOwner) { nomorTelepon ->
+            myNomortelepon = nomorTelepon
+        }
+
+        sharedViewModel.typeUserIORE.observe(viewLifecycleOwner) { typeIOrE ->
+            myTypeIOrE = typeIOrE
+        }
+
+        sharedViewModel.statusPendaftaran.observe(viewLifecycleOwner) { status ->
+            statusPendaftaran = status
+        }
+
+        sharedViewModel.profesi.observe(viewLifecycleOwner) { profesi ->
+            myProfesi = profesi
+        }
+
+        sharedViewModel.fakultas.observe(viewLifecycleOwner) { fakultas ->
+            myFakultas = fakultas
+        }
+
+        sharedViewModel.status.observe(viewLifecycleOwner) { status ->
+            myStatus = status
+        }
+
+        sharedViewModel.domisili.observe(viewLifecycleOwner) { domisili ->
+            myDomisili = domisili
+        }
 
         Log.d("JADWAL OFF", "scaalog${myID}chahalogs")
         view.findViewById<Button>(R.id.Enter).setOnClickListener {
@@ -298,7 +330,10 @@ class jadwalOffline : Fragment() {
             IsiCurhatan = isiCurhatan.trim(),
             ButuhPersetujuan = true,
             onoff = "Offline",
-            typeIOrE = "${myTypeIOrE}"
+            typeIOrE = "${myTypeIOrE}",
+
+            domisili = "${myDomisili}",
+            status = "${myStatus}"
         )
 
 
@@ -344,7 +379,10 @@ class jadwalOffline : Fragment() {
             IsiCurhatan = isiCurhatan.trim(),
             ButuhPersetujuan = true,
             onoff = "Offline",
-            typeIOrE = "${myTypeIOrE}"
+            typeIOrE = "${myTypeIOrE}",
+
+            domisili = "${myDomisili}",
+            status = "${myStatus}"
         )
 
 

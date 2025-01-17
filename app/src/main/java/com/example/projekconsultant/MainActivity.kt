@@ -108,6 +108,9 @@ class MainActivity : BaseActivity() {
                     sharedViewModel.umur.value = data.getString("tanggalLahir")
                     sharedViewModel.nomorTelepon.value = data.getString("nomortelepon")
                     sharedViewModel.typeUserIORE.value = data.getString("type")
+                    sharedViewModel.status.value = data.getString("status")
+                    sharedViewModel.domisili.value = data.getString("domisili")
+
 
                     // Ganti fragment dengan data terbaru
                     replaceFragment(Home.newInstance(namaprofile ?: ""))
@@ -156,6 +159,7 @@ class MainActivity : BaseActivity() {
                 } else {
                     // Bisa Mendaftar
                     sharedViewModel.statusPendaftaran.value = true
+                    sharedViewModel.riwayatStatusDisetujui.value = false
                 }
             }
 

@@ -38,21 +38,46 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/cardview_foto"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView5"
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView5"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/border_circle_white"-->
+<!--            android:clipToOutline="true"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/img_ppdefault"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/backtohome"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_foto"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_marginStart="10dp"
-            android:background="@drawable/border_circle_white"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_ppdefault"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/backtohome"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_ppdefault">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_ppdefault"
+                tools:src="@drawable/img_ppdefault" />
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

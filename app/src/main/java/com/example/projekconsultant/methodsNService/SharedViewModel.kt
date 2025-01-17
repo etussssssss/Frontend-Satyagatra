@@ -18,6 +18,8 @@ class SharedViewModel : ViewModel() {
     val profesi = MutableLiveData<String>()
     val fakultas = MutableLiveData<String>()
 
+    val status = MutableLiveData<String>()
+    val domisili = MutableLiveData<String>()
 
     val typeUserIORE = MutableLiveData<String>()
     val statusPendaftaran = MutableLiveData<Boolean>().apply { value = true }

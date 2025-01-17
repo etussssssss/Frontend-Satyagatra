@@ -64,11 +64,20 @@ class ProfileStatistikKonsultasi : BaseActivity() {
     private lateinit var barChartUmur: BarChart
     private lateinit var pieChartIorE: PieChart
     private lateinit var pieChartnamakonselor: PieChart
+    private lateinit var pieChartlayanankonsultasi: PieChart
+
+    private lateinit var pieChartprofesiinternal: PieChart
+    private lateinit var pieChartfakultas: PieChart
+
+    private lateinit var pieChartprofesieksternal: PieChart
+    private lateinit var pieChartjeniskelamin: PieChart
+    private lateinit var pieChartstatus: PieChart
+    private lateinit var pieChartdomisili: PieChart
+
     private lateinit var teksInformation:TextView
     private var receivedUserList: ArrayList<DataRiwayatSelesaiAdmin> = arrayListOf()
     // private lateinit var downloadpdf:View
     private lateinit var downloadpdf:Button
-
     private lateinit var progbar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,11 +86,24 @@ class ProfileStatistikKonsultasi : BaseActivity() {
 
         progbar = findViewById(R.id.loading_progbar)
         downloadpdf = findViewById(R.id.downloadpdf)
+
+
         barChart = findViewById(R.id.horizontalBarChart)
-        barChartUmur = findViewById(R.id.horizontalBarChartUmur)
         pieChart = findViewById(R.id.pieChart)
-        pieChartIorE = findViewById(R.id.pieChartIorE)
+        barChartUmur = findViewById(R.id.horizontalBarChartUmur)
+
         pieChartnamakonselor = findViewById(R.id.pieChartnamakonselor)
+        pieChartlayanankonsultasi =  findViewById(R.id.pieChartlayanankonsultasi)
+        pieChartIorE = findViewById(R.id.pieChartIorE)
+
+        pieChartprofesiinternal = findViewById(R.id.pieChartprofesiinternal)
+        pieChartfakultas = findViewById(R.id.pieChartfakultas)
+        pieChartprofesieksternal =  findViewById(R.id.pieChartprofesieksternal)
+        pieChartjeniskelamin = findViewById(R.id.pieChartjeniskelamin)
+        pieChartstatus = findViewById(R.id.pieChartstatus)
+        pieChartdomisili =  findViewById(R.id.pieChartdomisili)
+
+
         spinnerBulan = findViewById(R.id.spinnerBulan)
         spinnerTahun = findViewById(R.id.spinnerTahun)
         teksInformation = findViewById(R.id.textInformation)
@@ -106,11 +128,19 @@ class ProfileStatistikKonsultasi : BaseActivity() {
         spinnerTahun.onItemSelectedListener = createSpinnerListener()
 
         // Menampilkan data awal
-        pieChart1(receivedUserList)
+        //
         setupBarChart3(receivedUserList)
-        pieChartIOrE(receivedUserList)
+        pieChartLayananKonsultasi(receivedUserList)
         setupBarChartUmur(receivedUserList)
+        pieChart1(receivedUserList)
+        pieChartIOrE(receivedUserList)
         pieChartnamakonselor(receivedUserList)
+        pieChartProfesiEksternal(receivedUserList)
+        pieChartProfesiInternal(receivedUserList)
+        pieChartfakultas(receivedUserList)
+        pieChartGender(receivedUserList)
+        pieChartStatus(receivedUserList)
+        pieChartDomisili(receivedUserList)
 
         findViewById<ImageView>(R.id.backtohome).setOnClickListener {
             finish()
@@ -426,6 +456,425 @@ class ProfileStatistikKonsultasi : BaseActivity() {
         pieChartnamakonselor.invalidate()
     }
 
+    private fun pieChartLayananKonsultasi(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menghitung jumlah kemunculan setiap kategori layanan di dataArray
+        val kategoriCount = receivedUserList?.groupBy { it.layananKonsultasi }?.mapValues { it.value.size }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        kategoriCount?.forEach { (kategori, count) ->
+            if(kategori.isEmpty()){
+                pieEntries.add(PieEntry(count.toFloat(), "Tatap Muka"))
+            }else{
+                pieEntries.add(PieEntry(count.toFloat(), kategori))
+            }
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Kategori Layanan")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+            ContextCompat.getColor(this, R.color.c4),
+            ContextCompat.getColor(this, R.color.c5),
+            ContextCompat.getColor(this, R.color.c6),
+            ContextCompat.getColor(this, R.color.c7),
+            ContextCompat.getColor(this, R.color.c8),
+            ContextCompat.getColor(this, R.color.c9),
+            ContextCompat.getColor(this, R.color.c10),
+            ContextCompat.getColor(this, R.color.c11),
+            ContextCompat.getColor(this, R.color.c12),
+            ContextCompat.getColor(this, R.color.c13)
+        )
+
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartlayanankonsultasi.data = pieData
+        pieChartlayanankonsultasi.setUsePercentValues(true)
+        pieChartlayanankonsultasi.setCenterTextSize(12F)
+        pieChartlayanankonsultasi.isVerticalScrollBarEnabled = true
+        pieChartlayanankonsultasi.isHorizontalScrollBarEnabled = false
+        pieChartlayanankonsultasi.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartlayanankonsultasi.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartlayanankonsultasi.animateY(1000)
+        pieChartlayanankonsultasi.invalidate()
+    }
+
+    private fun pieChartProfesiInternal(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menambahkan data berdasarkan kategori tertentu (contoh: Internal vs Eksternal)
+        val filteredKategori = receivedUserList?.filter { it.typeUser == "Internal" }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        filteredKategori?.groupBy { it.profesi }?.mapValues { it.value.size }?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Kategori Profesi Internal")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+            ContextCompat.getColor(this, R.color.c4),
+            ContextCompat.getColor(this, R.color.c5),
+            ContextCompat.getColor(this, R.color.c6),
+            ContextCompat.getColor(this, R.color.c7),
+            ContextCompat.getColor(this, R.color.c8),
+            ContextCompat.getColor(this, R.color.c9),
+            ContextCompat.getColor(this, R.color.c10),
+            ContextCompat.getColor(this, R.color.c11),
+            ContextCompat.getColor(this, R.color.c12),
+            ContextCompat.getColor(this, R.color.c13)
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartprofesiinternal.data = pieData
+        pieChartprofesiinternal.setUsePercentValues(true)
+        pieChartprofesiinternal.setCenterTextSize(12F)
+        pieChartprofesiinternal.isVerticalScrollBarEnabled = true
+        pieChartprofesiinternal.isHorizontalScrollBarEnabled = false
+        pieChartprofesiinternal.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartprofesiinternal.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartprofesiinternal.animateY(1000)
+        pieChartprofesiinternal.invalidate()
+    }
+
+
+    private fun pieChartfakultas(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menambahkan data berdasarkan kategori tertentu (contoh: Internal vs Eksternal)
+        val filteredKategori = receivedUserList?.filter { it.typeUser == "Internal" }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        filteredKategori?.groupBy { it.fakultas }?.mapValues { it.value.size }?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Kategori Fakultas")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+            ContextCompat.getColor(this, R.color.c4),
+            ContextCompat.getColor(this, R.color.c5),
+            ContextCompat.getColor(this, R.color.c6),
+            ContextCompat.getColor(this, R.color.c7),
+            ContextCompat.getColor(this, R.color.c8),
+            ContextCompat.getColor(this, R.color.c9),
+            ContextCompat.getColor(this, R.color.c10),
+            ContextCompat.getColor(this, R.color.c11),
+            ContextCompat.getColor(this, R.color.c12),
+            ContextCompat.getColor(this, R.color.c13)
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartfakultas.data = pieData
+        pieChartfakultas.setUsePercentValues(true)
+        pieChartfakultas.setCenterTextSize(12F)
+        pieChartfakultas.isVerticalScrollBarEnabled = true
+        pieChartfakultas.isHorizontalScrollBarEnabled = false
+        pieChartfakultas.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartfakultas.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartfakultas.animateY(1000)
+        pieChartfakultas.invalidate()
+    }
+
+    private fun pieChartProfesiEksternal(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menambahkan data berdasarkan kategori tertentu (contoh: Internal vs Eksternal)
+        val filteredKategori = receivedUserList?.filter { it.typeUser == "Eksternal" }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        filteredKategori?.groupBy { it.profesi }?.mapValues { it.value.size }?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Kategori Profesi Eksternal")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+            ContextCompat.getColor(this, R.color.c4),
+            ContextCompat.getColor(this, R.color.c5),
+            ContextCompat.getColor(this, R.color.c6),
+            ContextCompat.getColor(this, R.color.c7),
+            ContextCompat.getColor(this, R.color.c8),
+            ContextCompat.getColor(this, R.color.c9),
+            ContextCompat.getColor(this, R.color.c10),
+            ContextCompat.getColor(this, R.color.c11),
+            ContextCompat.getColor(this, R.color.c12),
+            ContextCompat.getColor(this, R.color.c13)
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartprofesieksternal.data = pieData
+        pieChartprofesieksternal.setUsePercentValues(true)
+        pieChartprofesieksternal.setCenterTextSize(12F)
+        pieChartprofesieksternal.isVerticalScrollBarEnabled = true
+        pieChartprofesieksternal.isHorizontalScrollBarEnabled = false
+        pieChartprofesieksternal.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartprofesieksternal.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartprofesieksternal.animateY(1000)
+        pieChartprofesieksternal.invalidate()
+    }
+
+    private fun pieChartGender(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menghitung jumlah kemunculan setiap kategori layanan di dataArray
+        val kategoriCount = receivedUserList?.groupBy { it.gender }?.mapValues { it.value.size }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        kategoriCount?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Jenis Kelamin")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.ijofigmapudar),
+            ContextCompat.getColor(this, R.color.textbirufigma2),
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartjeniskelamin.data = pieData
+        pieChartjeniskelamin.setUsePercentValues(true)
+        pieChartjeniskelamin.setCenterTextSize(12F)
+        pieChartjeniskelamin.isVerticalScrollBarEnabled = true
+        pieChartjeniskelamin.isHorizontalScrollBarEnabled = false
+        pieChartjeniskelamin.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartjeniskelamin.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartjeniskelamin.animateY(1000)
+        pieChartjeniskelamin.invalidate()
+    }
+
+    private fun pieChartStatus(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menghitung jumlah kemunculan setiap kategori layanan di dataArray
+        val kategoriCount = receivedUserList?.groupBy { it.status }?.mapValues { it.value.size }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        kategoriCount?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Status Klien")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.ijofigmapudar),
+            ContextCompat.getColor(this, R.color.textbirufigma2),
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartstatus.data = pieData
+        pieChartstatus.setUsePercentValues(true)
+        pieChartstatus.setCenterTextSize(12F)
+        pieChartstatus.isVerticalScrollBarEnabled = true
+        pieChartstatus.isHorizontalScrollBarEnabled = false
+        pieChartstatus.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartstatus.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartstatus.animateY(1000)
+        pieChartstatus.invalidate()
+    }
+
+    private fun pieChartDomisili(receivedUserList: List<DataRiwayatSelesaiAdmin>?) {
+        // List untuk menyimpan data PieChart
+        val pieEntries = mutableListOf<PieEntry>()
+
+        // Menghitung jumlah kemunculan setiap kategori layanan di dataArray
+        val kategoriCount = receivedUserList?.groupBy { it.domisili }?.mapValues { it.value.size }
+
+        // Menambahkan data ke PieEntry berdasarkan kategoriCount
+        kategoriCount?.forEach { (kategori, count) ->
+            pieEntries.add(PieEntry(count.toFloat(), kategori))
+        }
+
+        // Membuat PieDataSet dengan data
+        val pieDataSet = PieDataSet(pieEntries, "Domisili Klien")
+        val customColors = listOf(
+            ContextCompat.getColor(this, R.color.ijofigmapudar),
+            ContextCompat.getColor(this, R.color.textbirufigma2),
+            ContextCompat.getColor(this, R.color.c1),
+            ContextCompat.getColor(this, R.color.c2),
+            ContextCompat.getColor(this, R.color.c3),
+            ContextCompat.getColor(this, R.color.c4),
+            ContextCompat.getColor(this, R.color.c5),
+            ContextCompat.getColor(this, R.color.c6),
+            ContextCompat.getColor(this, R.color.c7),
+            ContextCompat.getColor(this, R.color.c8),
+            ContextCompat.getColor(this, R.color.c9),
+            ContextCompat.getColor(this, R.color.c10),
+            ContextCompat.getColor(this, R.color.c11),
+            ContextCompat.getColor(this, R.color.c12),
+            ContextCompat.getColor(this, R.color.c13)
+        )
+        pieDataSet.colors = customColors
+        pieDataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // Format nilai sebagai persentase dengan dua angka desimal
+                return String.format("%.1f%%", value)
+            }
+        }
+
+        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
+        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+
+        // Membuat PieData dari PieDataSet
+        val pieData = PieData(pieDataSet)
+        pieChartdomisili.data = pieData
+        pieChartdomisili.setUsePercentValues(true)
+        pieChartdomisili.setCenterTextSize(12F)
+        pieChartdomisili.isVerticalScrollBarEnabled = true
+        pieChartdomisili.isHorizontalScrollBarEnabled = false
+        pieChartdomisili.setExtraOffsets(60f, 0f, 0f, 0f) // Menambah jarak di bagian bawah
+
+        // Mengatur Legend agar label vertikal
+        val legend = pieChartdomisili.legend
+        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP // Atur posisi vertikal
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
+        legend.setDrawInside(false) // Pastikan legend berada di luar chart
+
+        pieChartdomisili.animateY(1000)
+        pieChartdomisili.invalidate()
+    }
+
 
     // Fungsi filter berdasarkan Spinner
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -435,18 +884,44 @@ class ProfileStatistikKonsultasi : BaseActivity() {
 
         // Filter jika opsi "Pilih" belum diubah
         if (bulanDipilih == "Pilih" && tahunDipilih == "Pilih") {
+            // Bersihkan BarChart jika filter belum lengkap
+            barChart.clear()
             pieChart.clear()
-            barChart.clear() // Bersihkan BarChart jika belum ada filter
+            barChartUmur.clear()
+
+            pieChartnamakonselor.clear()
+            pieChartlayanankonsultasi.clear()
             pieChartIorE.clear()
+
+            pieChartprofesiinternal.clear()
+            pieChartfakultas.clear()
+            pieChartprofesieksternal.clear()
+            pieChartjeniskelamin.clear()
+            pieChartstatus.clear()
+            pieChartdomisili.clear()
+
             teksInformation.text = "Pilih Terlebih Dahulu"
             return
         }
 
         // Filter jika hanya salah satu spinner yang dipilih
         if (bulanDipilih == "Pilih" || tahunDipilih == "Pilih") {
+            // Bersihkan BarChart jika filter belum lengkap
+            barChart.clear()
             pieChart.clear()
-            barChart.clear() // Bersihkan BarChart jika filter belum lengkap
+            barChartUmur.clear()
+
+            pieChartnamakonselor.clear()
+            pieChartlayanankonsultasi.clear()
             pieChartIorE.clear()
+
+            pieChartprofesiinternal.clear()
+            pieChartfakultas.clear()
+            pieChartprofesieksternal.clear()
+            pieChartjeniskelamin.clear()
+            pieChartstatus.clear()
+            pieChartdomisili.clear()
+
             teksInformation.text = "Pilih Terlebih Dahulu"
             return
         }
@@ -472,9 +947,19 @@ class ProfileStatistikKonsultasi : BaseActivity() {
             isBulanMatch && isTahunMatch
         }
 
+        // BarChart hanya muncul jika kedua spinner dipilih
+        setupBarChart3(filteredData)
+        pieChartLayananKonsultasi(filteredData)
+        setupBarChartUmur(filteredData)
         pieChart1(filteredData)
-        setupBarChart3(filteredData) // BarChart hanya muncul jika kedua spinner dipilih
         pieChartIOrE(filteredData)
+        pieChartnamakonselor(filteredData)
+        pieChartProfesiEksternal(filteredData)
+        pieChartProfesiInternal(filteredData)
+        pieChartfakultas(filteredData)
+        pieChartGender(filteredData)
+        pieChartStatus(filteredData)
+        pieChartDomisili(filteredData)
 
         //Text
         getTextInformation(filteredData)
@@ -485,8 +970,22 @@ class ProfileStatistikKonsultasi : BaseActivity() {
         val kategoriCountnamaKonselor = receivedUserList?.groupBy { it.namaKonselor }?.mapValues { it.value.size }
         val kategoriCounttopikKonsultasi = receivedUserList?.groupBy { it.topikKonsultasi }?.mapValues { it.value.size }
         val kategoriCountlayananOnlineOrOfflineUser = receivedUserList?.groupBy { it.layananOnlineOrOfflineUser }?.mapValues { it.value.size }
+
         val kategoriCountlayananKonsultasi = receivedUserList?.groupBy { it.layananKonsultasi }?.mapValues { it.value.size }
         val kategoriCounttypeUser = receivedUserList?.groupBy { it.typeUser }?.mapValues { it.value.size }
+        val kategoriCountUmur = receivedUserList?.groupBy { it.umur }?.mapValues { it.value.size }
+
+
+        val kategoriCountProfesiInternal = receivedUserList?.filter { it.typeUser == "Internal" }?.groupBy { it.profesi }?.mapValues { it.value.size }
+        val kategoriCountProfesiEksternal = receivedUserList?.filter { it.typeUser == "Eksternal" }?.groupBy { it.profesi }?.mapValues { it.value.size }
+
+
+        val kategoriCountFakultas = receivedUserList?.groupBy { it.fakultas }?.mapValues { it.value.size }
+        val kategoriCountGender = receivedUserList?.groupBy { it.gender }?.mapValues { it.value.size }
+        val kategoriCountStatus = receivedUserList?.groupBy { it.status }?.mapValues { it.value.size }
+        val kategoriCountDomisili = receivedUserList?.groupBy { it.domisili }?.mapValues { it.value.size }
+
+
 
         if(receivedUserList.isNullOrEmpty()){
             teksInformation.text = "Pilih Terlebih Dahulu"
@@ -522,6 +1021,54 @@ class ProfileStatistikKonsultasi : BaseActivity() {
                 stringBuilder.appendLine("   - $key: $value")
             }
 
+            stringBuilder.appendLine("\n6. Tipe Umur:")
+            kategoriCountUmur?.forEach { (key, value) ->
+                stringBuilder.appendLine("   - $key: $value")
+            }
+
+            stringBuilder.appendLine("\n7. Tipe Profesi Internal:")
+            kategoriCountProfesiInternal?.forEach { (key, value) ->
+                if(key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
+            stringBuilder.appendLine("\n7.1. Tipe Fakultas:")
+            kategoriCountFakultas?.forEach { (key, value) ->
+                if(key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
+            stringBuilder.appendLine("\n8. Tipe Profesi Eksternal:")
+            kategoriCountProfesiEksternal?.forEach { (key, value) ->
+                if (key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
+            stringBuilder.appendLine("\n9. Jenis Kelamin:")
+            kategoriCountGender?.forEach { (key, value) ->
+                if (key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
+
+            stringBuilder.appendLine("\n10. Status:")
+            kategoriCountStatus?.forEach { (key, value) ->
+                if (key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
+            stringBuilder.appendLine("\n11. Domisili:")
+            kategoriCountDomisili?.forEach { (key, value) ->
+                if (key.isNotEmpty()){
+                    stringBuilder.appendLine("   - $key: $value")
+                }
+            }
+
             teksInformation.text = stringBuilder.toString()
         }
 
@@ -529,7 +1076,11 @@ class ProfileStatistikKonsultasi : BaseActivity() {
             progbar.visibility = View.VISIBLE
             if (!receivedUserList.isNullOrEmpty()){
                 Log.d("DOWNLOAD DATA", "${receivedUserList}")
-                val chartList = listOf(pieChart, barChart, pieChartIorE, barChartUmur, pieChartnamakonselor) // Menggunakan 3 chart
+                val chartList = listOf(barChart, pieChart, barChartUmur,
+                    pieChartnamakonselor, pieChartlayanankonsultasi, pieChartIorE,
+                    pieChartprofesiinternal, pieChartfakultas, pieChartprofesieksternal,
+                    pieChartjeniskelamin, pieChartstatus, pieChartdomisili
+                )
                 savePdfWithMultipleChartsAndText22(this, chartList,"${teksInformation.text.trim()}")
             }else{
                 progbar.visibility = View.GONE
@@ -773,607 +1324,104 @@ class ProfileStatistikKonsultasi : BaseActivity() {
 
     private val dataArray = arrayListOf(
         DataRiwayatSelesaiAdmin(
-            "C-115",
-            "Wajid",
-            "Dr. Maya Trisilawati, MKM.",
-            "Pos Sapa",
-            "26 Januari 2024",
-            "Online",
-            "Via Chat",
-            "Curhat saya Lorem Ipsum",
-            "Internal",
-            20
+            nomorPendaftaranUser = "C-115",
+            namaUser = "Dea",
+            namaKonselor = "Dr. Maya Trisilawati, MKM.",
+            topikKonsultasi = "Pos Sapa",
+            tanggalSelesaiUser = "26 Januari 2024",
+            layananOnlineOrOfflineUser = "Online",
+            layananKonsultasi = "Via Chat",
+            curhatanUser = "Curhat saya Lorem Ipsum",
+            typeUser = "Internal",
+            umur = 20,
+            gender = "Perempuan",
+            profesi = "Mahasiswa",
+            fakultas = "FK",
+            status = "Single",
+            domisili = "DKI Jakarta"
         ),
         DataRiwayatSelesaiAdmin(
-            "C-115",
-            "Aril",
-            "Dr. Maya Trisilawati, MKM.",
-            "Pos Sapa",
-            "21 Januari 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem 123",
-            "Internal",
-            21
+            nomorPendaftaranUser = "C-115",
+            namaUser = "Caca",
+            namaKonselor = "Dr. Maya Trisilawati, MKM.",
+            topikKonsultasi = "Pos Sapa",
+            tanggalSelesaiUser = "21 Januari 2024",
+            layananOnlineOrOfflineUser = "Offline",
+            layananKonsultasi = "Janji Tatap Muka/Offline",
+            curhatanUser = "Curhat saya Lorem 123",
+            typeUser = "Internal",
+            umur = 21,
+            gender = "Perempuan",
+            profesi = "Mahasiswa",
+            fakultas = "FTI",
+            status = "Single",
+            domisili = "DKI Jakarta"
         ),
         DataRiwayatSelesaiAdmin(
-            "C-143",
-            "Wilay",
-            "Dr. Maya Trisilawati, MKM.",
-            "Parenting",
-            "26 Januari 2024",
-            "Online",
-            "Via Chat",
-            "Curhat Lorem 123",
-            "Internal",
-            25
+            nomorPendaftaranUser = "C-143",
+            namaUser = "Wilay",
+            namaKonselor = "Dr. Maya Trisilawati, MKM.",
+            topikKonsultasi = "Parenting",
+            tanggalSelesaiUser = "26 Januari 2024",
+            layananOnlineOrOfflineUser = "Online",
+            layananKonsultasi = "Via Chat",
+            curhatanUser = "Curhat Lorem 123",
+            typeUser = "Internal",
+            umur = 25,
+            gender = "Laki-laki",
+            profesi = "Mahasiswa",
+            fakultas = "FTI",
+            status = "Single",
+            domisili = "DKI Jakarta"
         ),
         DataRiwayatSelesaiAdmin(
-            "C-413",
-            "Isa",
-            "Dr. Liko Maryudhiyanto, Sp.KJ., C.Ht",
-            "Agama",
-            "16 Januari 2024",
-            "Online",
-            "Via Chat",
-            "Curhat saya 343",
-            "Internal",
-            27
+            nomorPendaftaranUser = "C-413",
+            namaUser = "Isa",
+            namaKonselor = "Dr. Liko Maryudhiyanto, Sp.KJ., C.Ht",
+            topikKonsultasi = "Agama",
+            tanggalSelesaiUser = "16 Januari 2024",
+            layananOnlineOrOfflineUser = "Online",
+            layananKonsultasi = "Via Chat",
+            curhatanUser = "Curhat saya 343",
+            typeUser = "Internal",
+            umur = 27,
+            gender = "Laki-laki",
+            profesi = "Tendik",
+            fakultas = "FEB",
+            status = "Single",
+            domisili = "DKI Jakarta"
         ),
         DataRiwayatSelesaiAdmin(
-            "C-813",
-            "Isa",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Agama",
-            "6 Januari 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya 124123",
-            "Eksternal",
-            27
+            nomorPendaftaranUser = "C-813",
+            namaUser = "Isa",
+            namaKonselor = "Dr. Lusy Liany, S.H., M.H.",
+            topikKonsultasi = "Agama",
+            tanggalSelesaiUser = "6 Januari 2024",
+            layananOnlineOrOfflineUser = "Offline",
+            layananKonsultasi = "Janji Tatap Muka/Offline",
+            curhatanUser = "Curhat saya 124123",
+            typeUser = "Eksternal",
+            umur = 27,
+            gender = "Laki-laki",
+            profesi = "Pegawai",
+            status = "Menikah",
+            domisili = "DKI Jakarta"
         ),
         DataRiwayatSelesaiAdmin(
-            "C-513",
-            "Wajid",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Parenting",
-            "2 Januari 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem Dolor",
-            "Eksternal",
-            23
-        ),
-        DataRiwayatSelesaiAdmin(
-            "C-513",
-            "Wajid",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Parenting",
-            "2 Februari 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem Dolor",
-            "Eksternal",
-            22
-        ),
-        DataRiwayatSelesaiAdmin(
-            "C-513",
-            "Wajid",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Motivasi Belajar",
-            "2 Maret 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem Dolor",
-            "Eksternal",
-            22
-        ),
-        DataRiwayatSelesaiAdmin(
-            "C-513",
-            "Wajid",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Motivasi Belajar",
-            "2 April 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem Dolor",
-            "Eksternal",
-            22
-        ),
-        DataRiwayatSelesaiAdmin(
-            "C-513",
-            "Wajid",
-            "Dr. Lusy Liany, S.H., M.H.",
-            "Finansial",
-            "2 Mei 2024",
-            "Offline",
-            "Janji Tatap Muka/Offline",
-            "Curhat saya Lorem Dolor",
-            "Eksternal",
-            30
-        ),
+            nomorPendaftaranUser = "C-813",
+            namaUser = "Isa",
+            namaKonselor = "Dr. Lusy Liany, S.H., M.H.",
+            topikKonsultasi = "Agama",
+            tanggalSelesaiUser = "6 Januari 2024",
+            layananOnlineOrOfflineUser = "Offline",
+            layananKonsultasi = "Janji Tatap Muka/Offline",
+            curhatanUser = "Curhat saya 124123",
+            typeUser = "Eksternal",
+            umur = 27,
+            gender = "Laki-laki",
+            profesi = "Pengusaha",
+            status = "Menikah",
+            domisili = "Maluku Utara"
+        )
     )
-    // refrensi
-    fun savePdfWithChartAndText3(context: Context, chartBitmap: Bitmap, text: String) {
-        try {
-            val pdfFileName = "ChartWithText.pdf"
-            val outputStream: OutputStream?
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                // Android 10+ menggunakan MediaStore
-                val contentValues = ContentValues().apply {
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, pdfFileName)
-                    put(MediaStore.MediaColumns.MIME_TYPE, "application/pdf")
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
-                }
-
-                val resolver = context.contentResolver
-                val uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues)
-
-                if (uri == null) {
-                    println("Gagal membuat URI untuk penyimpanan file.")
-                    return
-                }
-
-                outputStream = resolver.openOutputStream(uri)
-            } else {
-                // Android 9 ke bawah menggunakan penyimpanan eksternal langsung
-                val pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
-                val file = File(pdfPath, pdfFileName)
-                outputStream = FileOutputStream(file)
-            }
-
-            if (outputStream != null) {
-                // Membuat file PDF
-                val pdfWriter = PdfWriter(outputStream)
-                val pdfDocument = com.itextpdf.kernel.pdf.PdfDocument(pdfWriter)
-                val document = Document(pdfDocument, PageSize.A4)
-
-                // Menambahkan teks ke PDF
-                val paragraph = Paragraph(text).setFontSize(12f)
-                document.add(paragraph)
-
-                // Menambahkan chart sebagai gambar ke PDF
-                val stream = java.io.ByteArrayOutputStream()
-                chartBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-                val imageData = ImageDataFactory.create(stream.toByteArray())
-                val chartImage = Image(imageData).setWidth(400f).setHeight(300f)
-                document.add(chartImage)
-
-                // Menutup dokumen
-                document.close()
-                println("PDF berhasil disimpan.")
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            println("Terjadi kesalahan saat menyimpan PDF: ${e.message}")
-        }
-    }
-    // Filter Data Tanpa Harus Pilih Bulan Dan tahun
-    // Filter Muncul Semua Data di awal
-    private fun filterDataAll(dataArray: List<DataRiwayatSelesaiAdmin>) {
-        val bulanDipilih = spinnerBulan.selectedItem.toString()
-        val tahunDipilih = spinnerTahun.selectedItem.toString()
-
-        // Filter jika opsi "Pilih" belum diubah
-        if (bulanDipilih == "Pilih" && tahunDipilih == "Pilih") {
-            pieChart1(dataArray)
-            setupBarChart3(dataArray)
-            return
-        }
-
-        // Filter Data
-        val filteredData = dataArray.filter { data ->
-            val tanggalParts = data.tanggalSelesaiUser.split(" ")
-            val bulan = tanggalParts.getOrNull(1)
-            val tahun = tanggalParts.getOrNull(2)
-            (bulan == bulanDipilih || bulanDipilih == "Pilih") && (tahun == tahunDipilih || tahunDipilih == "Pilih")
-        }
-
-        pieChart1(filteredData)
-        setupBarChart3(filteredData)
-    }
-    // Fungsi PieChart
-    private fun pieChart2(receivedUserList: List<DataRiwayatSelesaiAdmin>) {
-        val pieEntries = mutableListOf<PieEntry>()
-
-        val kategoriCount = receivedUserList.groupBy { it.topikKonsultasi }.mapValues { it.value.size }
-
-        kategoriCount.forEach { (kategori, count) ->
-            pieEntries.add(PieEntry(count.toFloat(), kategori))
-        }
-
-        // Mengatur PieDataSet hanya jika ada data
-        if (pieEntries.isNotEmpty()) {
-            val pieDataSet = PieDataSet(pieEntries, "Kategori Konsultasi")
-            val customColors = listOf(
-                ContextCompat.getColor(this, R.color.c1),
-                ContextCompat.getColor(this, R.color.c2),
-                ContextCompat.getColor(this, R.color.c3),
-                ContextCompat.getColor(this, R.color.c4),
-                ContextCompat.getColor(this, R.color.c5),
-                ContextCompat.getColor(this, R.color.c6),
-                ContextCompat.getColor(this, R.color.c7),
-                ContextCompat.getColor(this, R.color.c8),
-                ContextCompat.getColor(this, R.color.c9),
-                ContextCompat.getColor(this, R.color.c10),
-                ContextCompat.getColor(this, R.color.c11),
-                ContextCompat.getColor(this, R.color.c12),
-                ContextCompat.getColor(this, R.color.c13)
-            )
-            pieDataSet.colors = customColors
-            pieDataSet.valueTextSize = 16f
-            val pieData = PieData(pieDataSet)
-
-            val legend = pieChart.legend
-            legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
-            legend.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM // Atur posisi vertikal
-            legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
-
-            pieChart.data = pieData
-            pieChart.setUsePercentValues(true)
-            pieChart.animateY(1000)
-        } else {
-            pieChart.clear()
-        }
-
-        pieChart.invalidate() // Refresh chart
-    }
-
-    private fun setupBarChart3Tes(dataList: List<DataRiwayatSelesaiAdmin>) {
-        val barEntries = mutableListOf<BarEntry>()
-        val labels = mutableListOf<String>()
-
-        // Mengelompokkan data berdasarkan bulan dan tahun
-        val kategoriCount = dataList.groupBy { getMonthYear(it.tanggalSelesaiUser) }.mapValues { it.value.size }
-
-        kategoriCount.entries.forEachIndexed { index, entry ->
-            barEntries.add(BarEntry(index.toFloat(), entry.value.toFloat()))
-            labels.add(entry.key)  // Menambahkan bulan dan tahun sebagai label
-        }
-
-        // Tambahkan dummy data jika hanya ada 1 entri
-//        if (barEntries.size == 1) {
-//            barEntries.add(BarEntry(1f, 0f)) // Dummy data
-//            labels.add("Dummy") // Label dummy
-//        }
-
-        if (barEntries.isNotEmpty()) {
-            // Membuat dataset untuk BarChart
-            val barDataSet = BarDataSet(barEntries, "Rekap Data")
-            barDataSet.valueTextSize = 14f
-            barDataSet.color = ContextCompat.getColor(this, R.color.textbirufigma2)
-            barDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black)
-
-            // Membuat objek BarData
-            val barData = BarData(barDataSet)
-            barData.barWidth = 0.7f
-
-            // Menyusun data ke dalam chart
-            barChart.data = barData
-            barChart.setFitBars(true)
-            barChart.description.isEnabled = false
-            barChart.animateY(1000)
-
-            // Mengatur sumbu X dengan label kategori
-            barChart.xAxis.valueFormatter = IndexAxisValueFormatter(labels)
-            barChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
-            barChart.xAxis.granularity = 1f
-            barChart.xAxis.setDrawGridLines(false)
-            barChart.xAxis.axisMinimum = 0f
-            barChart.xAxis.axisMaximum = barEntries.size.toFloat()
-
-            // Mengatur sumbu Y
-            barChart.axisLeft.setDrawGridLines(false)
-            barChart.axisLeft.axisMinimum = 0f // Pastikan sumbu Y mulai dari 0
-            barChart.axisRight.isEnabled = false
-        } else {
-            barChart.clear()
-        }
-
-        barChart.invalidate()
-    }
 }
-
-
-
-
-//private fun tesBarchart(dataArray: ArrayList<DataRiwayatSelesaiAdmin>) {
-//    // Data untuk BarChart
-//    // Data jumlah konseling per bulan
-//    val jumlahKonseling = listOf(40f, 35f, 50f, 60f, 45f, 70f, 80f, 90f, 50f, 65f, 55f, 75f)
-//    val bulan = listOf(
-//        "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
-//        "Jul", "Agu", "Sep", "Okt", "Nov", "Des"
-//    )
-//
-//    // Menambahkan data ke BarEntry
-//    val entries = ArrayList<BarEntry>()
-//    for (i in jumlahKonseling.indices) {
-//        entries.add(BarEntry(i.toFloat(), jumlahKonseling[i]))
-//    }
-//
-//    // Konfigurasi dataset
-//    val dataSet = BarDataSet(entries, "Jumlah Konseling")
-//    dataSet.color = ContextCompat.getColor(this, R.color.textbirufigma2)
-//    dataSet.valueTextColor = ContextCompat.getColor(this, R.color.black)
-//    dataSet.valueTextSize = 14f
-//
-//    val barData = BarData(dataSet)
-//    barChart.data = barData
-//
-//    // Konfigurasi sumbu X dengan nama bulan
-//    val xAxis = barChart.xAxis
-//    xAxis.position = XAxis.XAxisPosition.BOTTOM
-//    xAxis.granularity = 1f
-//    xAxis.valueFormatter = IndexAxisValueFormatter(bulan)
-//
-//    // Menonaktifkan grid background
-//    barChart.setDrawGridBackground(false)
-//    barChart.description.isEnabled = false
-//
-//    // Animasi chart
-//    barChart.animateY(1000)
-//    barChart.invalidate()
-//}
-// Fungsi BarChart
-//private fun setupBarChart(dataList: List<DataRiwayatSelesaiAdmin>) {
-//    val barEntries = mutableListOf<BarEntry>()
-//    val labels = mutableListOf<String>()
-//
-//    val kategoriCount = dataList.groupBy { it.topikKonsultasi }.mapValues { it.value.size }
-//
-//    kategoriCount.entries.forEachIndexed { index, entry ->
-//        barEntries.add(BarEntry(index.toFloat(), entry.value.toFloat()))
-//        labels.add(entry.key)
-//    }
-//
-//    // Jika data kosong
-//    if (barEntries.isEmpty()) {
-//        barChart.clear()
-//        return
-//    }
-//
-//    val barDataSet = BarDataSet(barEntries, "Kategori Konsultasi")
-//    barDataSet.colors = listOf(
-//        ContextCompat.getColor(this, R.color.c1),
-//        ContextCompat.getColor(this, R.color.c2)
-//    )
-//    barDataSet.valueTextSize = 14f
-//
-//    val barData = BarData(barDataSet)
-//    barData.barWidth = 0.7f
-//
-//    barChart.data = barData
-//    barChart.setFitBars(true)
-//    barChart.description.isEnabled = false
-//    barChart.animateY(1000)
-//
-//    // Mengatur sumbu X dengan label
-//    barChart.xAxis.valueFormatter = IndexAxisValueFormatter(labels)
-//    barChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
-//    barChart.xAxis.granularity = 1f
-//    barChart.xAxis.setDrawGridLines(false)
-//
-//    barChart.invalidate()
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//class ProfileStatistikKonsultasi : BaseActivity() {
-//    private lateinit var spinnerBulan: Spinner
-//    private lateinit var spinnerTahun: Spinner
-//    private lateinit var pieChart: PieChart
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_profile_statistik_konsultasi)
-//        pieChart = findViewById(R.id.pieChart)
-//        spinnerBulan = findViewById(R.id.spinnerBulan)
-//        spinnerTahun = findViewById(R.id.spinnerTahun)
-//
-//        val receivedUserList = intent.getParcelableArrayListExtra<DataRiwayatSelesaiAdmin>("RIWAYAT")
-//
-//        val bulanArray = arrayOf("Pilih", "Januari", "Februari", "Maret", "April", "Mei","Juni", "Juli", "Agustus","September","Oktober","November","Desember")
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, bulanArray)
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Dropdown style
-//        spinnerBulan.adapter = adapter
-//
-//        // Data Riwayat
-//        val tahunArray = listOf("Pilih") + getUniqueYears(receivedUserList ?: emptyList())
-//        val tahunAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tahunArray)
-//        tahunAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinnerTahun.adapter = tahunAdapter
-//
-//        spinnerBulan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-//                filterData2(receivedUserList ?: listOf())
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>) {}
-//        }
-//
-//        spinnerTahun.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-//                filterData2(receivedUserList ?: listOf())
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>) {}
-//        }
-//
-//
-//
-//        pieChart(receivedUserList)
-//    }
-//
-//    private fun pieChart(receivedUserList: ArrayList<DataRiwayatSelesaiAdmin>?) {
-//        // List untuk menyimpan data PieChart
-//        val pieEntries = mutableListOf<PieEntry>()
-//
-//        Log.d("STATISTIK", "${receivedUserList}")
-//        // Menghitung jumlah kemunculan setiap kategori layanan di dataArray
-//        val kategoriCount = receivedUserList?.groupBy { it.topikKonsultasi }?.mapValues { it.value.size }
-//
-//        // Menambahkan data ke PieEntry berdasarkan kategoriCount
-//        kategoriCount?.forEach { (kategori, count) ->
-//            pieEntries.add(PieEntry(count.toFloat(), kategori))
-//        }
-//
-//        // Membuat PieDataSet dengan data
-//        val pieDataSet = PieDataSet(pieEntries, "Kategori Konsultasi")
-//        val customColors = listOf(
-//            ContextCompat.getColor(this, R.color.c1),
-//            ContextCompat.getColor(this, R.color.c2),
-//            ContextCompat.getColor(this, R.color.c3),
-//            ContextCompat.getColor(this, R.color.c4),
-//            ContextCompat.getColor(this, R.color.c5),
-//            ContextCompat.getColor(this, R.color.c6),
-//            ContextCompat.getColor(this, R.color.c7),
-//            ContextCompat.getColor(this, R.color.c8),
-//            ContextCompat.getColor(this, R.color.c9),
-//            ContextCompat.getColor(this, R.color.c10),
-//            ContextCompat.getColor(this, R.color.c11),
-//            ContextCompat.getColor(this, R.color.c12),
-//            ContextCompat.getColor(this, R.color.c13)
-//        )
-//        pieDataSet.colors = customColors
-//        pieDataSet.valueFormatter = object : ValueFormatter() {
-//            override fun getFormattedValue(value: Float): String {
-//                // Format nilai sebagai persentase dengan dua angka desimal
-//                return String.format("%.1f%%", value)
-//            }
-//        }
-//
-//        pieDataSet.valueTextSize = 16f
-//        pieDataSet.valueTextColor = ContextCompat.getColor(this, R.color.black) // Atur warna teks (opsional)
-//        pieDataSet.valueTypeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
-//
-//        // Membuat PieData dari PieDataSet
-//        val pieData = PieData(pieDataSet)
-//        pieChart.data = pieData
-//        pieChart.setUsePercentValues(true)
-//        pieChart.setCenterTextSize(12F)
-//
-//        // Mengatur Legend agar label vertikal
-//        val legend = pieChart.legend
-//        legend.orientation = Legend.LegendOrientation.VERTICAL // Orientasi legend vertikal
-//        legend.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM // Atur posisi vertikal
-//        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // Atur posisi horizontal
-//
-//        pieChart.animateY(1000)
-//        pieChart.invalidate()
-//    }
-//
-//    private fun getUniqueYears(dataArray: List<DataRiwayatSelesaiAdmin>): List<String> {
-//        return dataArray.mapNotNull { data ->
-//            val tanggalParts = data.tanggalSelesaiUser.split(" ")
-//            if (tanggalParts.size == 3) tanggalParts[2] else null
-//        }.distinct().sorted()
-//    }
-//
-//    private fun parseDate(tanggal: String): Date? {
-//        return try {
-//            val format = SimpleDateFormat("dd MMMM yyyy", Locale("id", "ID"))
-//            format.parse(tanggal)
-//        } catch (e: ParseException) {
-//            null
-//        }
-//    }
-//
-//    private fun filterData2(dataArray: List<DataRiwayatSelesaiAdmin>) {
-//        val bulanDipilih = spinnerBulan.selectedItem.toString()
-//        val tahunDipilih = spinnerTahun.selectedItem.toString()
-//
-//        if (bulanDipilih == "Pilih" || tahunDipilih == "Pilih") {
-//
-//        } else {
-//            val filteredData = dataArray.filter { data ->
-//                val tanggalParts = data.tanggalSelesaiUser.split(" ")
-//                if (tanggalParts.size == 3) {
-//                    val bulan = tanggalParts[1]
-//                    val tahun = tanggalParts[2]
-//                    bulan.equals(bulanDipilih, ignoreCase = true) && tahun == tahunDipilih
-//                } else {
-//                    false
-//                }
-//            }.sortedByDescending { parseDate(it.tanggalSelesaiUser) }
-//
-//            // Memanggil ulang pieChart dengan data yang sudah difilter
-//            pieChart(filteredData as ArrayList<DataRiwayatSelesaiAdmin>)
-//        }
-//    }
-//}
-
-
-
-
-
-//private val layanan = listOf(
-//    "Curhat", "Kesehatan Reproduksi",
-//    "Hukum", "Agama",
-//    "Kesehatan Mental Dan Psikologi", "Keluarga",
-//    "Pos Sapa", "Motivasi Belajar",
-//    "HIV", "Gizi",
-//    "Parenting", "Disabilitas",
-//    "Finansial"
-//)
-
-
-
-
-
-//    private val dataArray = arrayListOf(
-//        DataRiwayatSelesaiAdmin(
-//            "C-113","Wajid","Keluarga",
-//            "26 Januari 2024","Online",
-//            "Via Chat", "Curhat saya Lorem 123"),
-//        DataRiwayatSelesaiAdmin(
-//            "S-253","Nanas", "Curhat Remaja",
-//            "21 Januari 2024","Online",
-//            "Zoom", "Curhat saya Lorem 125"),
-//        DataRiwayatSelesaiAdmin(
-//            "S-213","Jaki", "Agama",
-//            "26 Januari 2024","Online",
-//            "Zoom", "Curhat saya Lorem 346"),
-//        DataRiwayatSelesaiAdmin(
-//            "S-243","Topik","Agama",
-//            "26 Februari 2024","Online",
-//            "Zoome", "Curhat saya Lorem 361"),
-//        DataRiwayatSelesaiAdmin(
-//            "B-263","Adon","Agama",
-//            "26 Maret 2024","Online",
-//            "Zoom", "Curhat saya Lorem 532"),
-//        DataRiwayatSelesaiAdmin(
-//            "C-253","Dani","Agama",
-//            "26 Maret 2024","Online",
-//            "Via Chat", "Curhat saya Lorem 20"),
-//
-//        DataRiwayatSelesaiAdmin(
-//            "C-253","Jani","Finansial",
-//            "26 Februari 2023","Online",
-//            "Via Chat", "Curhat saya Lorem 20"),
-//
-//        DataRiwayatSelesaiAdmin(
-//            "C-253","Pani","Kesehatan Mental dan Psikologi",
-//            "26 Maret 2023","Online",
-//            "Via Chat", "Curhat saya Lorem 20"),
-//        DataRiwayatSelesaiAdmin(
-//            "C-253","Jaja","Kesehatan Mental dan Psikologi",
-//            "26 Maret 2023","Online",
-//            "Via Chat", "Curhat saya Lorem 20"),
-//        DataRiwayatSelesaiAdmin(
-//            "W-253","Waka","Kesehatan Mental dan Psikologi",
-//            "26 Maret 2023","Online",
-//            "Via Chat", "Curhat saya Lorem 20"),
-//    )
