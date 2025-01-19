@@ -85,7 +85,7 @@ class Home : Fragment() {
             ProfileKonselorHome("dr. Liko Maryudhiyanto, Sp.KJ., C.Ht", R.drawable.s_img_drliko, listOf("Motivasi Belajar", "Kesehatan Mental dan Psikologi"), R.string.deskripDrLiko),
             ProfileKonselorHome("dr. Melok Roro Kinanthi, M.Psi., Psikolog", R.drawable.s_img_drmelok, listOf("Keluarga", "Pos Sapa/Kekerasan", "Parenting", "Kesehatan Mental dan Psikologi"), R.string.deskripDrMelok),
             ProfileKonselorHome("dr. Octaviani Indrasari Ranakusuma, M.Si., Psi.", R.drawable.s_img_droktaviani, listOf("Keluarga", "Parenting", "Kesehatan Mental dan psikologi"), R.string.deskripDrOctaviani),
-            ProfileKonselorHome("dr. Miwa Pathani, M.Si., Psikolog", R.drawable.s_img_drmiwa, listOf("Kesehatan Mental dan Psikologi"), R.string.deskripDrMiwa),
+            ProfileKonselorHome("Dr. Miwa Patnani, M.Si., Psikolog", R.drawable.s_img_drmiwa, listOf("Kesehatan Mental dan Psikologi"), R.string.deskripDrMiwa),
             ProfileKonselorHome("Fitri Arlinkasari, Ph.D., Psikolog", R.drawable.s_img_drfitri, listOf("Agama"), R.string.deskripDrFitriArlinkasari),
             ProfileKonselorHome("Aya Yahya Maulana, Lc, M.H.", R.drawable.s_img_draya, listOf("Gizi"), R.string.deskripDrayaYahya),
             ProfileKonselorHome("dr. Siti Maulidya Sari, M.Epid, Dipl.DK", R.drawable.s_img_drsiti, listOf("Kesehatan Mental dan Psikologi"), R.string.deskripDrSitiMaulidya),
