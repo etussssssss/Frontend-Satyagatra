@@ -74,6 +74,9 @@ class RiwayatButuhPersetujuan : Fragment() {
     }
 
     private lateinit var db: FirebaseFirestore
+    private lateinit var btnBatal:Button
+    private lateinit var chat:Button
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_riwayat_butuh_persetujuan, container, false)
@@ -84,8 +87,8 @@ class RiwayatButuhPersetujuan : Fragment() {
         val descriptionTextView = view.findViewById<TextView>(R.id.deskripsTopik)
         val toggleTextView = view.findViewById<TextView>(R.id.toggleTextView)
         //val chat = view.findViewById<View>(R.id.chat)
-        val chat = view.findViewById<Button>(R.id.chat)
-        val btnBatal = view.findViewById<Button>(R.id.buttonBatal)
+        chat = view.findViewById<Button>(R.id.chat)
+        btnBatal = view.findViewById(R.id.buttonBatal)
 
         val nama = view.findViewById<TextView>(R.id.nama)
         val topik = view.findViewById<TextView>(R.id.topik)
@@ -156,8 +159,9 @@ class RiwayatButuhPersetujuan : Fragment() {
                 val radioButton = viewRadioDialog.findViewById<RadioButton>(selectedId)
 
                 if (selectedId != -1) {
+                    btnBatal.isEnabled = false
+                    chat.isEnabled = false
                     dialogbuilderRadiaDialog.dismiss()
-                    progbar.visibility = View.VISIBLE
                     val alasan = radioButton.text.toString()
 
 
@@ -175,54 +179,23 @@ class RiwayatButuhPersetujuan : Fragment() {
                     dialogbuilderYakin.show() // Tampilkan dialog
 
                     viewYakinDialog.findViewById<Button>(R.id.btn_no).setOnClickListener {
-                        progbar.visibility = View.GONE
+
                         dialogbuilderYakin.dismiss()
                     }
 
                     viewYakinDialog.findViewById<Button>(R.id.btn_yes).setOnClickListener {
                         dialogbuilderYakin.dismiss()
 
-                        //
-                        // Dialog Berhasil Batal (Layer 3)
-                        val builderBerhasil = AlertDialog.Builder(requireContext()) // Perbaikan disini
-                        val viewBerhasil = layoutInflater.inflate(R.layout.item_berhasil_1, null) // Inflasi layout dialog
-                        builderBerhasil.setView(viewBerhasil) // Pasang layout ke dialog
-                        val dialogBerhasil = builderBerhasil.create() // Perbaikan disini dengan menggunakan builder2.create()
-
-                        // Mengatur ukuran wrap_content untuk dialog
-                        dialogBerhasil.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                        // Set background untuk dialog
-                        dialogBerhasil.window?.setBackgroundDrawable(requireContext().getDrawable(R.drawable.borderadius_dialog_white))
-                        dialogBerhasil.setCancelable(false) // Dialog dapat ditutup dengan back atau klik luar
-
-                        Toast.makeText(requireContext(), "Alasan Dipilih: $alasan", Toast.LENGTH_SHORT).show()
-
                         //Delete Chat
-                        deleteChat("${thNoRuid}")
+                        //deleteChat("${thNoRuid}")
                         // Delete Pendaftaran
                         //deletePendaftaran("${thNoRuid}") (Logic Lain)
-                        deletePendaftaran("${thNoPendaftaran}")
-
-                        Handler().postDelayed({
-                            progbar.visibility = View.GONE
-                            dialogBerhasil.show() // Tampilkan dialog kedua dengan benar
-
-                            // Ke Pilih Penjadwalan
-                            viewBerhasil.findViewById<Button>(R.id.btn_pilihjadwal).setOnClickListener {
-                                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, Penjadwalan()).commit()
-                                requireActivity().findViewById<BottomNavigationView>(R.id.bottomnav).selectedItemId = R.id.checked
-                                dialogBerhasil.dismiss()
-                            }
-
-                            // Ke Home
-                            viewBerhasil.findViewById<Button>(R.id.btn_home).setOnClickListener {
-                                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, Home()).commit()
-                                requireActivity().findViewById<BottomNavigationView>(R.id.bottomnav).selectedItemId = R.id.home
-                                dialogBerhasil.dismiss()
-                            }
-                        }, 3000)
+                        //deletePendaftaran("${thNoPendaftaran}")
+                        cancel("${thNoRuid}")
                     }
                 } else {
+                    btnBatal.isEnabled = true
+                    chat.isEnabled = true
                     Toast.makeText(requireContext(), "Pilih alasan terlebih dahulu!", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -233,18 +206,21 @@ class RiwayatButuhPersetujuan : Fragment() {
     private lateinit var progbar:ProgressBar
 
     private fun deleteChat(rUid: String){
+        //
+        // Dialog Berhasil Batal (Layer 3)
+        val builderBerhasil = AlertDialog.Builder(requireContext()) // Perbaikan disini
+        val viewBerhasil = layoutInflater.inflate(R.layout.item_berhasil_1, null) // Inflasi layout dialog
+        builderBerhasil.setView(viewBerhasil) // Pasang layout ke dialog
+        val dialogBerhasil = builderBerhasil.create() // Perbaikan disini dengan menggunakan builder2.create()
+
+        // Mengatur ukuran wrap_content untuk dialog
+        dialogBerhasil.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        // Set background untuk dialog
+        dialogBerhasil.window?.setBackgroundDrawable(requireContext().getDrawable(R.drawable.borderadius_dialog_white))
+        dialogBerhasil.setCancelable(false) // Dialog dapat ditutup dengan back atau klik luar
+
+        // Live Data
         val sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
-        // Perbarui status berdasarkan perubahan secara real time menggunakan shared view model (live data front end)
-        sharedViewModel.riwayatStatusButuhPersetujuan.value = null
-        sharedViewModel.riwayatStatusDisetujui.value = null
-        sharedViewModel.riwayatTopik.value = null
-        sharedViewModel.riwayatLayanan.value = null
-        sharedViewModel.riwayatTanggal.value = null
-        sharedViewModel.riwayatOffOrOn.value = null
-        sharedViewModel.riwayatDescTopik.value = null
-        sharedViewModel.riwayatNoPendaftaran.value = null
-        // Tidak Bisa Mendaftar
-        sharedViewModel.statusPendaftaran.value = false
 
         //Delete Chat
         val messagesRef = db.collection("chats").document(rUid).collection("messages")
@@ -255,12 +231,53 @@ class RiwayatButuhPersetujuan : Fragment() {
             }
 
             batch.commit().addOnSuccessListener {
+                // Perbarui status berdasarkan perubahan secara real time menggunakan shared view model (live data front end)
+                sharedViewModel.riwayatStatusButuhPersetujuan.value = null
+                sharedViewModel.riwayatStatusDisetujui.value = null
+                sharedViewModel.riwayatTopik.value = null
+                sharedViewModel.riwayatLayanan.value = null
+                sharedViewModel.riwayatTanggal.value = null
+                sharedViewModel.riwayatOffOrOn.value = null
+                sharedViewModel.riwayatDescTopik.value = null
+                sharedViewModel.riwayatNoPendaftaran.value = null
+                // Tidak Bisa Mendaftar
+                sharedViewModel.statusPendaftaran.value = true
+
+                Handler().postDelayed({
+                    btnBatal.isEnabled = true
+                    chat.isEnabled = true
+                    dialogBerhasil.show() // Tampilkan dialog kedua dengan benar
+
+                    // Ke Pilih Penjadwalan
+                    viewBerhasil.findViewById<Button>(R.id.btn_pilihjadwal).setOnClickListener {
+                        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, Penjadwalan()).commit()
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bottomnav).selectedItemId = R.id.checked
+                        dialogBerhasil.dismiss()
+                    }
+
+                    // Ke Home
+                    viewBerhasil.findViewById<Button>(R.id.btn_home).setOnClickListener {
+                        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, Home()).commit()
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bottomnav).selectedItemId = R.id.home
+                        dialogBerhasil.dismiss()
+                    }
+                }, 3000)
+
                 Log.d("Firestore Butuh Persetujuan", "Successfully deleted all messages in chats for: Butuh Persetujuan $")
             }.addOnFailureListener { e ->
                 Log.e("Firestore Butuh Persetujuan", "Failed to delete messages in chats for: Butuh Persetujuan $", e)
             }
         }.addOnFailureListener { e ->
             Log.e("Firestore Butuh Persetujuan", "Failed to fetch messages for chats: Butuh Persetujuan $", e)
+        }
+    }
+
+    private fun cancel(rUid: String){
+        db.collection("daftarKonseling").document(rUid).delete().addOnSuccessListener {
+            deleteChat(rUid)
+            Log.d("Firestore Cancel", "Successfully deleted document: ${rUid}asd")
+        }.addOnFailureListener { e ->
+            Log.e("Firestore Cancel", "Failed to delete document: ${rUid}asd", e)
         }
     }
 

@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Registrasi">
 
-
     <View
         android:layout_width="150px"
         android:layout_height="250px"
@@ -382,7 +381,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintVertical_bias="0.50">
+
     </ProgressBar>
 
     <TextView

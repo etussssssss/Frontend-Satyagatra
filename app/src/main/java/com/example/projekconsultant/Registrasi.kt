@@ -117,7 +117,7 @@ class Registrasi : BaseActivity() {
                 progress.visibility = View.VISIBLE
 
                 auth.createUserWithEmailAndPassword(eml, passw).addOnCompleteListener { task ->
-                    progress.visibility = View.GONE // Progress bar disembunyikan
+                    // progress.visibility = View.GONE // Progress bar disembunyikan
                     if (task.isSuccessful) {
                         val uid = auth.currentUser?.uid.toString()
                         saveDataEP(eml, uid)
@@ -270,17 +270,20 @@ class Registrasi : BaseActivity() {
         }
     }
 
+
     private fun inputInternal(dataUsers: UserDataLengkapiRegistrasi, internal:UserInternal, uid: String) {
         val builder = AlertDialog.Builder(this).setView(R.layout.item_dialog_login)
         val dialog = builder.create()
         dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.borderadius_dialog_white))
         dialog.setCancelable(false)
 
-        // Variabel untuk melacak status
-        var saveCount = 0
-        // Fungsi untuk memeriksa status simpan
-        fun checkAllDataSaved() {
-            if (saveCount == 2) { // Jika kedua operasi selesai
+        // Menyimpan data pertama
+        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
+            // Menyimpan data kedua
+            db.collection("internals").document(uid).set(internal).addOnSuccessListener {
+                progress.visibility = View.GONE
+                btnEnter.isEnabled = true
+
                 dialog.show()
                 dialog.findViewById<Button>(R.id.btn_ok_login)?.setOnClickListener {
                     val intent = Intent(this@Registrasi, MainActivity::class.java)
@@ -288,22 +291,14 @@ class Registrasi : BaseActivity() {
                     dialog.dismiss()
                     finish()
                 }
+
+            }.addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        // Menyimpan data pertama
-        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
-            saveCount++
-            checkAllDataSaved() // Cek setelah sukses
         }.addOnFailureListener { e ->
-            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
-        }
+            progress.visibility = View.GONE
+            btnEnter.isEnabled = true
 
-        // Menyimpan data kedua
-        db.collection("internals").document(uid).set(internal).addOnSuccessListener {
-            saveCount++
-            checkAllDataSaved() // Cek setelah sukses
-        }.addOnFailureListener { e ->
             Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
@@ -314,11 +309,13 @@ class Registrasi : BaseActivity() {
         dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.borderadius_dialog_white))
         dialog.setCancelable(false)
 
-        // Variabel untuk melacak status
-        var saveCount = 0
-        // Fungsi untuk memeriksa status simpan
-        fun checkAllDataSaved() {
-            if (saveCount == 2) { // Jika kedua operasi selesai
+        // Menyimpan data pertama
+        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
+            // Menyimpan data kedua
+            db.collection("eksternals").document(uid).set(eksternal).addOnSuccessListener {
+                progress.visibility = View.GONE
+                btnEnter.isEnabled = true
+
                 dialog.show()
                 dialog.findViewById<Button>(R.id.btn_ok_login)?.setOnClickListener {
                     val intent = Intent(this@Registrasi, MainActivity::class.java)
@@ -326,25 +323,93 @@ class Registrasi : BaseActivity() {
                     dialog.dismiss()
                     finish()
                 }
+
+            }.addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        // Menyimpan data pertama
-        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
-            saveCount++
-            checkAllDataSaved() // Cek setelah sukses
         }.addOnFailureListener { e ->
-            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
-        }
+            progress.visibility = View.GONE
+            btnEnter.isEnabled = true
 
-        // Menyimpan data kedua
-        db.collection("eksternals").document(uid).set(eksternal).addOnSuccessListener {
-            saveCount++
-            checkAllDataSaved() // Cek setelah sukses
-        }.addOnFailureListener { e ->
             Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
+
+//    private fun inputInternal(dataUsers: UserDataLengkapiRegistrasi, internal:UserInternal, uid: String) {
+//        val builder = AlertDialog.Builder(this).setView(R.layout.item_dialog_login)
+//        val dialog = builder.create()
+//        dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.borderadius_dialog_white))
+//        dialog.setCancelable(false)
+//
+//        // Variabel untuk melacak status
+//        var saveCount = 0
+//        // Fungsi untuk memeriksa status simpan
+//        fun checkAllDataSaved() {
+//            if (saveCount == 2) { // Jika kedua operasi selesai
+//                dialog.show()
+//                dialog.findViewById<Button>(R.id.btn_ok_login)?.setOnClickListener {
+//                    val intent = Intent(this@Registrasi, MainActivity::class.java)
+//                    startActivity(intent)
+//                    dialog.dismiss()
+//                    finish()
+//                }
+//            }
+//        }
+//
+//        // Menyimpan data pertama
+//        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
+//            saveCount++
+//            checkAllDataSaved() // Cek setelah sukses
+//        }.addOnFailureListener { e ->
+//            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        // Menyimpan data kedua
+//        db.collection("internals").document(uid).set(internal).addOnSuccessListener {
+//            saveCount++
+//            checkAllDataSaved() // Cek setelah sukses
+//        }.addOnFailureListener { e ->
+//            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
+//        }
+//    }
+//
+//    private fun inputEksternal(dataUsers: UserDataLengkapiRegistrasi, eksternal:UserEksternal, uid: String) {
+//        val builder = AlertDialog.Builder(this).setView(R.layout.item_dialog_login)
+//        val dialog = builder.create()
+//        dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.borderadius_dialog_white))
+//        dialog.setCancelable(false)
+//
+//        // Variabel untuk melacak status
+//        var saveCount = 0
+//        // Fungsi untuk memeriksa status simpan
+//        fun checkAllDataSaved() {
+//            if (saveCount == 2) { // Jika kedua operasi selesai
+//                dialog.show()
+//                dialog.findViewById<Button>(R.id.btn_ok_login)?.setOnClickListener {
+//                    val intent = Intent(this@Registrasi, MainActivity::class.java)
+//                    startActivity(intent)
+//                    dialog.dismiss()
+//                    finish()
+//                }
+//            }
+//        }
+//
+//        // Menyimpan data pertama
+//        db.collection("datas").document(uid).set(dataUsers).addOnSuccessListener {
+//            saveCount++
+//            checkAllDataSaved() // Cek setelah sukses
+//        }.addOnFailureListener { e ->
+//            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        // Menyimpan data kedua
+//        db.collection("eksternals").document(uid).set(eksternal).addOnSuccessListener {
+//            saveCount++
+//            checkAllDataSaved() // Cek setelah sukses
+//        }.addOnFailureListener { e ->
+//            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
     private fun regisAkunEmailNoVerif(email: String, password: String){
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
